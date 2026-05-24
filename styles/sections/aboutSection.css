@@ -1,0 +1,54 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-text {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    max-width: 800px;
+    text-align: center;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 40px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.tech-icon:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.tech-icon svg {
+    width: 50px;
+    height: 50px;
+    fill: var(--text-muted);
+    transition: fill 0.3s;
+}
+
+.tech-icon:hover svg {
+    fill: var(--accent);
+}
+
+.tech-icon span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
