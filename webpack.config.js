@@ -9,7 +9,7 @@ const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
 module.exports = {
     // Разделяем логику: critical выполнится мгновенно, index — загрузится в фоне
     entry: {
-        critical: './js/critical.js', 
+        // critical: './js/critical.js', 
         index: './js/index.js',
     },
     
@@ -47,7 +47,7 @@ module.exports = {
 
         // Этот плагин находит скомпилированный critical.bundle.js и встраивает его в HTML текстом
         new HtmlInlineScriptPlugin({
-            scriptMatch: [/critical\.bundle\.js$/],
+            scriptMatch: [/.bundle\.js$/],
         }),
 
         new MiniCssExtractPlugin(),
