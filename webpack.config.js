@@ -10,7 +10,7 @@ module.exports = {
     // Разделяем логику: critical выполнится мгновенно, index — загрузится в фоне
     entry: {
         // critical: './js/critical.js', 
-        index: './js/index.js',
+        index: './dev/js/index.js',
     },
     
     output: {
@@ -55,7 +55,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, "./images"),
+                    from: path.resolve(__dirname, "./dev/images"),
                     to: path.resolve(__dirname, "dist/images")
                 },
                 {
