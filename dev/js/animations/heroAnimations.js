@@ -1,4 +1,4 @@
-function animateHero() {
+window.animateHero = function animateHero() {
     anime({
         targets: '.hero .reveal',
         translateY: [40, 0],
