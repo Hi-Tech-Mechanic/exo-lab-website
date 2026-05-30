@@ -41,38 +41,3 @@ body {
     overflow-x: hidden;
     cursor: none;
 }
-
-/* ==============================================
-   Динамическое управление цветом SVG через CSS
-   Ключ: устанавливаем color на <object> элементе
-   Примечание: currentColor наследуется из родительского контекста
-   ============================================== */
-
-/* Базовые стили для SVG иконок (загруженные через <object>) */
-.tech-icon-svg,
-.social-icon-svg,
-.hero-logo,
-.loading-logo {
-    width: 100%;
-    height: 100%;
-    color: var(--accent);
-    transition: color 0.3s ease;
-    display: block;
-}
-
-/* Hover-эффекты для иконок */
-.tech-icon:hover .tech-icon-svg,
-.social-link:hover .social-icon-svg {
-    color: var(--accent-orange);
-    filter: brightness(1.5);
-}
-
-/* Анимация для hero-logo */
-.hero-logo {
-    animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { color: var(--accent); }
-    50% { color: var(--accent-orange); }
-}

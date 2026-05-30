@@ -1,4 +1,4 @@
-import "../styles/main.css";
+import "../styles/index.css";
 import "../styles/adaptation/mobileMenu.css";
 import "../styles/adaptation/responsive.css";
 
@@ -18,7 +18,11 @@ import "../styles/components/titlesSection.css";
 import "../styles/sections/aboutSection.css";
 import "../styles/sections/contactSection.css";
 import "../styles/sections/footer.css";
-import "../styles/sections/projectSection.css"; 
+import "../styles/sections/projectSection.css";
+import "../styles/sections/projects/sectionLabels.css";
+import "../styles/sections/projects/videoBlocks.css";
+import "../styles/sections/projects/photoGrid.css";
+import "../styles/sections/projects/responsive.css";
 import "../styles/sections/heroSection.css";
 import "../styles/sections/sections.css";
 import "../styles/sections/technologiesSection.css";
@@ -30,6 +34,7 @@ import "./navigation/smoothScrollForNavLinks.js";
 import "./effects/customCursor.js";
 import "./effects/gridBackground.js";
 import "./effects/noiseOverlay.js";
+import "./effects/videoAnimations/videoAnimationController.js";
 import "./effects/particleConstellation.js";
 
 import "./animations/heroAnimations.js";
