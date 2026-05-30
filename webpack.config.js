@@ -9,7 +9,6 @@ const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
 module.exports = {
     // Разделяем логику: critical выполнится мгновенно, index — загрузится в фоне
     entry: {
-        // critical: './js/critical.js', 
         index: './dev/js/index.js',
     },
     
@@ -61,6 +60,17 @@ module.exports = {
                 {
                     from: path.resolve(__dirname, "favicon.png"),
                     to: path.resolve(__dirname, "dist")
+                },
+                // Обновляем в корне проекта bundle-файлы
+                {
+                    from: path.resolve(__dirname, "./dist/index.html"),
+                    to: path.resolve(__dirname, "./index.html"),
+                    force: true
+                },
+                {
+                    from: path.resolve(__dirname, "./dist/index.css"),
+                    to: path.resolve(__dirname, "./index.css"),
+                    force: true
                 },
             ]
         })
