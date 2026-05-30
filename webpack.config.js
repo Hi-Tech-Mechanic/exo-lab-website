@@ -2,12 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
 
 module.exports = {
-    // Разделяем логику: critical выполнится мгновенно, index — загрузится в фоне
     entry: {
         index: './dev/js/index.js',
     },
@@ -61,18 +61,25 @@ module.exports = {
                     from: path.resolve(__dirname, "favicon.png"),
                     to: path.resolve(__dirname, "dist")
                 },
-                // Обновляем в корне проекта bundle-файлы
-                {
-                    from: path.resolve(__dirname, "./dist/index.html"),
-                    to: path.resolve(__dirname, "./index.html"),
-                    force: true
-                },
-                {
-                    from: path.resolve(__dirname, "./dist/index.css"),
-                    to: path.resolve(__dirname, "./index.css"),
-                    force: true
-                },
             ]
+        }),
+
+        // Обновляем в корне проекта bundle-файлы
+        new FileManagerPlugin({
+            events: {
+                onEnd: {
+                    copy: [
+                        { 
+                            source: path.resolve(__dirname, 'dist/index.html'), 
+                            destination: path.resolve(__dirname, 'index.html') 
+                        },
+                        { 
+                            source: path.resolve(__dirname, 'dist/index.css'), 
+                            destination: path.resolve(__dirname, 'index.css') 
+                        },
+                    ],
+                },
+            },
         })
     ],
 
