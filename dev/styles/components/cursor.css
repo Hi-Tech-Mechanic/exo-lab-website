@@ -9,6 +9,8 @@
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s, border-color 0.2s;
     mix-blend-mode: difference;
+    box-sizing: border-box;
+    will-change: left, top;
 }
 
 .cursor-trail {
@@ -16,15 +18,20 @@
     width: 6px;
     height: 6px;
     background: var(--accent);
+    border: 1px solid #d8db00;
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     opacity: 0.4;
     transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    will-change: left, top;
+    transition: opacity 0.2s;
 }
 
 .custom-cursor.hovering {
     width: 30px;
     height: 30px;
     border-color: var(--accent-orange);
+    transform: translate(-50%, -50%) scale(1.25);
 }
