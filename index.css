@@ -17,6 +17,14 @@
     --neon-30: rgba(var(--neon-color), 0.3);
     --neon-40: rgba(var(--neon-color), 0.4);
     --neon-50: rgba(var(--neon-color), 0.5);
+    --cyan: #00f0ff;
+    --cyan-dim: rgba(0, 240, 255, 0.15);
+    --purple: #b400ff;
+    --purple-dim: rgba(180, 0, 255, 0.15);
+    --bg-dark: #050508;
+    --bg-card-dark: #0a0a10;
+    --text-dim: #555568;
+    --border: rgba(0, 240, 255, 0.1);
     --grid-opacity: 0.15;
     --font-heading: 'Rajdhani', sans-serif;
     --font-body: 'Roboto', sans-serif;
