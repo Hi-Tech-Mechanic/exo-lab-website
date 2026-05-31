@@ -4,6 +4,7 @@ import "../styles/adaptation/responsive.css";
 
 import "../styles/animations/revealAnimations.css";
 import "../styles/animations/rippleEffect.css";
+import "../styles/animations/scrollHint.css";
 
 import "../styles/base/background.css";
 import "../styles/base/glowText.css";
@@ -14,6 +15,7 @@ import "../styles/components/cursor.css";
 import "../styles/components/header.css";
 import "../styles/components/loadingScreen.css";
 import "../styles/components/titlesSection.css";
+import "../styles/components/blueprintAnnotations.css";
 
 import "../styles/sections/aboutSection.css";
 import "../styles/sections/contactSection.css";
@@ -26,6 +28,8 @@ import "../styles/sections/projects/responsive.css";
 import "../styles/sections/heroSection.css";
 import "../styles/sections/sections.css";
 import "../styles/sections/technologiesSection.css";
+import "../styles/sections/exoskeletonSection.css";
+import "../styles/sections/layerInfo.css";
 
 import "./navigation/activeNavLinkOnScroll.js";
 import "./navigation/mobileMenu.js";
@@ -43,6 +47,8 @@ import "./animations/projectCardTiltEffect.js";
 import "./animations/rippleEffectOnButtons.js";
 import "./animations/scrollReveal.js";
 import "./animations/techIconAnimationOnHover.js";
+import "./animations/exoskeletonScrollLayerControl.js";
+import "./animations/helmetAnimation.js";
 
 import "./core/loadingScreen.js";
 

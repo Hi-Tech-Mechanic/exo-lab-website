@@ -1,0 +1,46 @@
+.exoskeleton-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.exoskeleton-container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1400px;
+    width: 100%;
+    flex: 1;
+}
+
+.blueprint-viewer {
+    flex: 1;
+    position: sticky;
+    top: 120px;
+    min-height: 700px;
+}
+
+.blueprint-svg-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.blueprint-svg-wrapper svg {
+    width: 100%;
+    height: auto;
+}
+
+.blueprint-layer {
+    transition: transform 0.1s ease-out, opacity 0.3s;
+}
+
+.exoskeleton-info {
+    flex: 0 0 350px;
+    position: relative;
+}

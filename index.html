@@ -57,6 +57,7 @@
         <nav class="nav" id="mainNav">
             <a href="#hero">Главная</a>
             <a href="#about">О проекте</a>
+            <a href="#exoskeleton">Модуль</a>
             <a href="#projects">Проект</a>
             <a href="#tech">Технологии</a>
             <a href="#contact">Контакты</a>
@@ -65,22 +66,117 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <svg class="hero-logo reveal" viewBox="0 0 120 120">
-            <defs>
-                <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#e5ff00"/>
-                    <stop offset="100%" style="stop-color:#ff6b00"/>
-                </linearGradient>
-            </defs>
-            <polygon points="60,10 110,35 110,85 60,110 10,85 10,35" fill="none" stroke="url(#logoGrad)" stroke-width="2"/>
-            <polygon points="60,20 100,40 100,80 60,100 20,80 20,40" fill="none" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
-            <circle cx="60" cy="60" r="15" fill="none" stroke="url(#logoGrad)" stroke-width="1.5"/>
-            <circle cx="60" cy="60" r="5" fill="#00ff88"/>
-            <line x1="60" y1="10" x2="60" y2="45" stroke="#00ff88" stroke-width="0.5" opacity="0.3"/>
-            <line x1="60" y1="75" x2="60" y2="110" stroke="#00ff88" stroke-width="0.5" opacity="0.3"/>
-            <line x1="10" y1="60" x2="45" y2="60" stroke="#00ff88" stroke-width="0.5" opacity="0.3"/>
-            <line x1="75" y1="60" x2="110" y2="60" stroke="#00ff88" stroke-width="0.5" opacity="0.3"/>
-        </svg>
+        <div class="hero-logo-container reveal">
+            <svg id="heroHelmetSvg" viewBox="0 0 280 300" width="280" height="300">
+                <!-- Blueprint grid background -->
+                <defs>
+                    <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff6b00"/>
+                        <stop offset="100%" style="stop-color:#ff8c33"/>
+                    </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- Layer 1: Outer shell (helmet outline) -->
+                <g class="helmet-layer" id="helmetOuter" opacity="0">
+                    <path d="M140,20 C100,20 60,50 50,90 C42,120 40,150 45,180 C50,210 65,240 90,260 C110,275 130,280 140,280 C150,280 170,275 190,260 C215,240 230,210 235,180 C240,150 238,120 230,90 C220,50 180,20 140,20Z"
+                          fill="none" stroke="#ff6b00" stroke-width="1.5" stroke-dasharray="0 1000" filter="url(#glow)"/>
+                    <!-- Top ridge -->
+                    <path d="M140,20 L140,55" stroke="#ff6b00" stroke-width="1" opacity="0.6" stroke-dasharray="0 50"/>
+                </g>
+
+                <!-- Layer 2: Face plate -->
+                <g class="helmet-layer" id="helmetFacePlate" opacity="0">
+                    <path d="M140,65 C115,65 90,75 78,100 C70,118 68,135 72,155 C76,175 85,195 100,210 C115,222 130,228 140,228 C150,228 165,222 180,210 C195,195 204,175 208,155 C212,135 210,118 202,100 C190,75 165,65 140,65Z"
+                          fill="none" stroke="#ff8c33" stroke-width="1.2" stroke-dasharray="0 1000" filter="url(#glow)"/>
+                </g>
+
+                <!-- Layer 3: Visor -->
+                <g class="helmet-layer" id="helmetVisor" opacity="0">
+                    <path d="M85,130 C95,120 120,112 140,110 C160,112 185,120 195,130 C200,138 195,150 185,155 C170,162 155,165 140,165 C125,165 110,162 95,155 C85,150 80,138 85,130Z"
+                          fill="rgba(255,107,0,0.1)" stroke="#ff6b00" stroke-width="1.5" stroke-dasharray="0 500" filter="url(#glow)"/>
+                    <!-- Visor glow -->
+                    <path d="M95,135 C105,127 125,120 140,118 C155,120 175,127 185,135"
+                          fill="none" stroke="#ff8c33" stroke-width="2" opacity="0" stroke-dasharray="0 200" filter="url(#glow)"/>
+                </g>
+
+                <!-- Layer 4: Jaw / lower section -->
+                <g class="helmet-layer" id="helmetJaw" opacity="0">
+                    <path d="M100,210 C105,230 115,250 140,260 C165,250 175,230 180,210"
+                          fill="none" stroke="#ff6b00" stroke-width="1" stroke-dasharray="0 300"/>
+                    <!-- Jaw lines -->
+                    <line x1="120" y1="220" x2="115" y2="245" stroke="#ff6b00" stroke-width="0.8" opacity="0.6" stroke-dasharray="0 30"/>
+                    <line x1="140" y1="225" x2="140" y2="252" stroke="#ff6b00" stroke-width="0.8" opacity="0.6" stroke-dasharray="0 30"/>
+                    <line x1="160" y1="220" x2="165" y2="245" stroke="#ff6b00" stroke-width="0.8" opacity="0.6" stroke-dasharray="0 30"/>
+                    <!-- Mouth vent -->
+                    <rect x="125" y="232" width="30" height="4" rx="2" fill="none" stroke="#ff6b00" stroke-width="0.8" opacity="0.5"/>
+                </g>
+
+                <!-- Layer 5: Side panels -->
+                <g class="helmet-layer" id="helmetSides" opacity="0">
+                    <!-- Left side -->
+                    <path d="M50,90 C48,100 46,120 48,140" stroke="#ff6b00" stroke-width="1" stroke-dasharray="0 60"/>
+                    <path d="M52,145 C55,160 60,180 68,195" stroke="#ff6b00" stroke-width="1" stroke-dasharray="0 60"/>
+                    <!-- Right side -->
+                    <path d="M230,90 C232,100 234,120 232,140" stroke="#ff6b00" stroke-width="1" stroke-dasharray="0 60"/>
+                    <path d="M228,145 C225,160 220,180 212,195" stroke="#ff6b00" stroke-width="1" stroke-dasharray="0 60"/>
+                    <!-- Ear pieces -->
+                    <ellipse cx="52" cy="142" rx="8" ry="12" fill="none" stroke="#ff8c33" stroke-width="1" stroke-dasharray="0 80"/>
+                    <ellipse cx="228" cy="142" rx="8" ry="12" fill="none" stroke="#ff8c33" stroke-width="1" stroke-dasharray="0 80"/>
+                </g>
+
+                <!-- Layer 6: Details & HUD elements -->
+                <g class="helmet-layer" id="helmetDetails" opacity="0">
+                    <!-- Center line -->
+                    <line x1="140" y1="20" x2="140" y2="280" stroke="#ff6b00" stroke-width="0.3" stroke-dasharray="4 6" opacity="0.4"/>
+                    <!-- Cross marks -->
+                    <path d="M135,55 L145,55 M140,50 L140,60" stroke="#ff6b00" stroke-width="0.5" opacity="0.5"/>
+                    <path d="M135,168 L145,168 M140,163 L140,173" stroke="#ff6b00" stroke-width="0.5" opacity="0.5"/>
+                    <!-- Corner marks -->
+                    <path d="M60,35 L60,45 M55,40 L65,40" stroke="#ff6b00" stroke-width="0.5" opacity="0.4"/>
+                    <path d="M220,35 L220,45 M215,40 L225,40" stroke="#ff6b00" stroke-width="0.5" opacity="0.4"/>
+                    <!-- Panel lines -->
+                    <path d="M78,100 L90,90" stroke="#ff6b00" stroke-width="0.5" opacity="0.4"/>
+                    <path d="M202,100 L190,90" stroke="#ff6b00" stroke-width="0.5" opacity="0.4"/>
+                    <!-- Neck ring -->
+                    <ellipse cx="140" cy="270" rx="35" ry="8" fill="none" stroke="#ff6b00" stroke-width="1" stroke-dasharray="0 220"/>
+                </g>
+
+                <!-- Layer 7: Assembly particles -->
+                <g class="helmet-layer" id="helmetParticles" opacity="0">
+                    <circle cx="140" cy="20" r="2" fill="#ff6b00" opacity="0.8"/>
+                    <circle cx="50" cy="90" r="1.5" fill="#ff8c33" opacity="0.6"/>
+                    <circle cx="230" cy="90" r="1.5" fill="#ff8c33" opacity="0.6"/>
+                    <circle cx="140" cy="110" r="2" fill="#ff6b00" opacity="0.8"/>
+                    <circle cx="140" cy="280" r="2" fill="#ff6b00" opacity="0.8"/>
+                    <circle cx="52" cy="142" r="1.5" fill="#ff8c33" opacity="0.6"/>
+                    <circle cx="228" cy="142" r="1.5" fill="#ff8c33" opacity="0.6"/>
+                </g>
+
+                <!-- Blueprint annotations -->
+                <g class="helmet-layer" id="helmetAnnotations" opacity="0">
+                    <text x="25" y="15" class="bp-annotation" font-size="9">EXO-HELMET MK.VII</text>
+                    <text x="25" y="25" class="bp-annotation" font-size="7">PROJECT: EXOLAB // CLASSIFIED</text>
+
+                    <!-- Dimension lines -->
+                    <line x1="40" y1="20" x2="40" y2="280" class="bp-dimension"/>
+                    <text x="35" y="155" class="bp-annotation" font-size="6" transform="rotate(-90, 35, 155)">260mm</text>
+
+                    <line x1="50" y1="290" x2="230" y2="290" class="bp-dimension"/>
+                    <text x="140" y="298" class="bp-annotation" font-size="6" text-anchor="middle">180mm</text>
+
+                    <!-- Center cross -->
+                    <line x1="130" y1="150" x2="150" y2="150" class="bp-center-line"/>
+                    <line x1="140" y1="140" x2="140" y2="160" class="bp-center-line"/>
+                </g>
+            </svg>
+        </div>
         <h1 class="hero-title reveal">ExoLab</h1>
         <p class="hero-subtitle reveal">Симулятор сборки экзоскелетов и снаряжения будущего. Находится на стадии реализации и тестирования главных концепций</p>
         <a href="#about" class="cta-btn reveal"><span>Узнать больше</span></a>
@@ -90,7 +186,351 @@
         </div>
     </section>
 
+    <!-- Exoskeleton Blueprint Section -->
+    <section class="exoskeleton-section" id="exoskeleton">
+        <h2 class="section-title reveal">Модуль Экзоскелета</h2>
+        <p class="reveal" style="text-align:center; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 40px; letter-spacing: 2px;">
+            ARM MODULE MK-IV // SCROLL TO EXPLORE LAYERS
+        </p>
+
+        <div class="exoskeleton-container">
+            <!-- Blueprint Viewer -->
+            <div class="blueprint-viewer">
+                <div class="blueprint-svg-wrapper">
+                    <svg id="blueprintArm" viewBox="0 0 500 800" width="500" height="800">
+                        <defs>
+                            <linearGradient id="bpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff6b00; stop-opacity:0.1"/>
+                                <stop offset="100%" style="stop-color:#ff8c33; stop-opacity:0.05"/>
+                            </linearGradient>
+                            <filter id="bpGlow">
+                                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            <pattern id="bpGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,107,0,0.05)" stroke-width="0.3"/>
+                            </pattern>
+                        </defs>
+
+                        <!-- Background grid -->
+                        <rect width="500" height="800" fill="url(#bpGrid)"/>
+
+                        <!-- Border frame -->
+                        <rect x="10" y="10" width="480" height="780" fill="none" stroke="rgba(255,107,0,0.15)" stroke-width="0.5"/>
+                        <rect x="15" y="15" width="470" height="770" fill="none" stroke="rgba(255,107,0,0.08)" stroke-width="0.3"/>
+
+                        <!-- Corner marks -->
+                        <path d="M10,30 L10,10 L30,10" fill="none" stroke="#ff6b00" stroke-width="0.8"/>
+                        <path d="M490,30 L490,10 L470,10" fill="none" stroke="#ff6b00" stroke-width="0.8"/>
+                        <path d="M10,770 L10,790 L30,790" fill="none" stroke="#ff6b00" stroke-width="0.8"/>
+                        <path d="M490,770 L490,790 L470,790" fill="none" stroke="#ff6b00" stroke-width="0.8"/>
+
+                        <!-- Title block -->
+                        <text x="25" y="35" font-family="JetBrains Mono, monospace" font-size="11" fill="#ff6b00" letter-spacing="2">EXO-ARM MK-IV</text>
+                        <text x="25" y="48" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(255,107,0,0.5)">REV: 4.2.1 // SCROLL TO DECONSTRUCT</text>
+                        <text x="380" y="35" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(255,107,0,0.5)">SCALE: 1:1</text>
+                        <text x="380" y="48" font-family="JetBrains Mono, monospace" font-size="7" fill="rgba(255,107,0,0.5)">MAT: Ti-6Al-4V</text>
+
+                        <!-- ==================== LAYER 1: BASE OUTLINE ==================== -->
+                        <g class="bp-layer" id="bpLayer1" data-depth="0">
+                            <!-- Shoulder -->
+                            <path d="M250,60 C230,60 200,70 185,90 C175,105 170,120 168,140 L165,200"
+                                  fill="none" stroke="#ff6b00" stroke-width="1.2" filter="url(#bpGlow)"/>
+                            <path d="M250,60 C270,60 300,70 315,90 C325,105 330,120 332,140 L335,200"
+                                  fill="none" stroke="#ff6b00" stroke-width="1.2" filter="url(#bpGlow)"/>
+                            <!-- Upper arm -->
+                            <path d="M165,200 L155,350 L170,380"
+                                  fill="none" stroke="#ff6b00" stroke-width="1.2" filter="url(#bpGlow)"/>
+                            <path d="M335,200 L345,350 L330,380"
+                                  fill="none" stroke="#ff6b00" stroke-width="1.2" filter="url(#bpGlow)"/>
+                            <!-- Center -->
+                            <line x1="250" y1="60" x2="250" y2="750" stroke="#ff6b00" stroke-width="0.3" stroke-dasharray="6 4" opacity="0.3"/>
+
+                            <!-- Shoulder dome -->
+                            <ellipse cx="250" cy="80" rx="60" ry="25" fill="none" stroke="#ff6b00" stroke-width="1" opacity="0.6"/>
+                        </g>
+
+                        <!-- ==================== LAYER 2: STRUCTURAL ==================== -->
+                        <g class="bp-layer" id="bpLayer2" data-depth="50">
+                            <!-- Internal frame lines -->
+                            <path d="M200,120 L210,200 L200,300" fill="none" stroke="#ff8c33" stroke-width="0.6" opacity="0.5"/>
+                            <path d="M300,120 L290,200 L300,300" fill="none" stroke="#ff8c33" stroke-width="0.6" opacity="0.5"/>
+                            <!-- Cross braces -->
+                            <line x1="200" y1="120" x2="300" y2="120" stroke="#ff8c33" stroke-width="0.5" opacity="0.4"/>
+                            <line x1="195" y1="200" x2="305" y2="200" stroke="#ff8c33" stroke-width="0.5" opacity="0.4"/>
+                            <line x1="200" y1="300" x2="300" y2="300" stroke="#ff8c33" stroke-width="0.5" opacity="0.4"/>
+                            <!-- Forearm structure -->
+                            <path d="M170,380 L165,500 L180,520" fill="none" stroke="#ff6b00" stroke-width="1" opacity="0.7"/>
+                            <path d="M330,380 L335,500 L320,520" fill="none" stroke="#ff6b00" stroke-width="1" opacity="0.7"/>
+                            <!-- Elbow joint -->
+                            <circle cx="250" cy="365" r="40" fill="none" stroke="#ff8c33" stroke-width="0.8" opacity="0.6"/>
+                            <circle cx="250" cy="365" r="25" fill="none" stroke="#ff8c33" stroke-width="0.5" opacity="0.4"/>
+                        </g>
+
+                        <!-- ==================== LAYER 3: MECHANICAL ==================== -->
+                        <g class="bp-layer" id="bpLayer3" data-depth="100">
+                            <!-- Servo motors -->
+                            <circle cx="200" cy="120" r="12" fill="none" stroke="#ff6b00" stroke-width="0.8"/>
+                            <circle cx="200" cy="120" r="6" fill="rgba(255,107,0,0.15)" stroke="#ff6b00" stroke-width="0.5"/>
+                            <circle cx="300" cy="120" r="12" fill="none" stroke="#ff6b00" stroke-width="0.8"/>
+                            <circle cx="300" cy="120" r="6" fill="rgba(255,107,0,0.15)" stroke="#ff6b00" stroke-width="0.5"/>
+
+                            <!-- Elbow actuator -->
+                            <circle cx="250" cy="365" r="15" fill="rgba(255,107,0,0.1)" stroke="#ff6b00" stroke-width="1"/>
+                            <circle cx="250" cy="365" r="8" fill="none" stroke="#ff8c33" stroke-width="0.5"/>
+                            <!-- Actuator lines -->
+                            <line x1="250" y1="350" x2="250" y2="340" stroke="#ff6b00" stroke-width="0.8"/>
+                            <line x1="250" y1="380" x2="250" y2="390" stroke="#ff6b00" stroke-width="0.8"/>
+
+                            <!-- Hydraulic lines -->
+                            <path d="M190,130 C185,180 180,250 175,320" fill="none" stroke="#ff8c33" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.5"/>
+                            <path d="M310,130 C315,180 320,250 325,320" fill="none" stroke="#ff8c33" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.5"/>
+                            <path d="M175,390 C170,430 168,460 165,500" fill="none" stroke="#ff8c33" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.5"/>
+                            <path d="M325,390 C330,430 332,460 335,500" fill="none" stroke="#ff8c33" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.5"/>
+
+                            <!-- Wrist joint -->
+                            <circle cx="250" cy="540" r="25" fill="none" stroke="#ff6b00" stroke-width="0.8"/>
+                            <circle cx="250" cy="540" r="15" fill="none" stroke="#ff8c33" stroke-width="0.5"/>
+                        </g>
+
+                        <!-- ==================== LAYER 4: ARMOR PLATES ==================== -->
+                        <g class="bp-layer" id="bpLayer4" data-depth="150">
+                            <!-- Shoulder armor plates -->
+                            <path d="M195,75 C180,80 170,95 168,115 L170,140 C175,155 190,160 205,155 L220,145 C230,135 235,120 235,105 L230,85 C225,78 210,75 195,75Z"
+                                  fill="rgba(255,107,0,0.05)" stroke="#ff6b00" stroke-width="0.8"/>
+                            <path d="M305,75 C320,80 330,95 332,115 L330,140 C325,155 310,160 295,155 L280,145 C270,135 265,120 265,105 L270,85 C275,78 290,75 305,75Z"
+                                  fill="rgba(255,107,0,0.05)" stroke="#ff6b00" stroke-width="0.8"/>
+
+                            <!-- Bicep armor -->
+                            <path d="M175,200 L168,280 C167,290 170,295 178,295 L200,290 C210,285 215,275 215,260 L215,220 C215,210 210,205 200,205 L180,200Z"
+                                  fill="rgba(255,107,0,0.03)" stroke="#ff8c33" stroke-width="0.7"/>
+                            <path d="M325,200 L332,280 C333,290 330,295 322,295 L300,290 C290,285 285,275 285,260 L285,220 C285,210 290,205 300,205 L320,200Z"
+                                  fill="rgba(255,107,0,0.03)" stroke="#ff8c33" stroke-width="0.7"/>
+
+                            <!-- Forearm armor -->
+                            <path d="M180,380 L175,460 C174,475 178,485 185,490 L210,495 C220,495 225,485 225,470 L225,400 C225,390 220,385 210,385 L185,380Z"
+                                  fill="rgba(255,107,0,0.03)" stroke="#ff6b00" stroke-width="0.7"/>
+                            <path d="M320,380 L325,460 C326,475 322,485 315,490 L290,495 C280,495 275,485 275,470 L275,400 C275,390 280,385 290,385 L315,380Z"
+                                  fill="rgba(255,107,0,0.03)" stroke="#ff6b00" stroke-width="0.7"/>
+
+                            <!-- Plate seam lines -->
+                            <line x1="190" y1="220" x2="195" y2="270" stroke="#ff6b00" stroke-width="0.4" opacity="0.3"/>
+                            <line x1="310" y1="220" x2="305" y2="270" stroke="#ff6b00" stroke-width="0.4" opacity="0.3"/>
+                        </g>
+
+                        <!-- ==================== LAYER 5: WIRED / CIRCUITS ==================== -->
+                        <g class="bp-layer" id="bpLayer5" data-depth="200">
+                            <!-- Circuit traces -->
+                            <path d="M200,120 L200,150 L215,165 L215,200" fill="none" stroke="#ff8c33" stroke-width="0.4" opacity="0.6"/>
+                            <path d="M300,120 L300,150 L285,165 L285,200" fill="none" stroke="#ff8c33" stroke-width="0.4" opacity="0.6"/>
+
+                            <!-- Node points -->
+                            <circle cx="200" cy="150" r="2" fill="#ff6b00" opacity="0.7"/>
+                            <circle cx="215" cy="165" r="2" fill="#ff6b00" opacity="0.7"/>
+                            <circle cx="300" cy="150" r="2" fill="#ff6b00" opacity="0.7"/>
+                            <circle cx="285" cy="165" r="2" fill="#ff6b00" opacity="0.7"/>
+
+                            <!-- Neural wiring -->
+                            <path d="M250,365 L230,340 L210,340 L195,355" fill="none" stroke="#ff6b00" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+                            <path d="M250,365 L270,340 L290,340 L305,355" fill="none" stroke="#ff6b00" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+
+                            <!-- Hand wiring -->
+                            <path d="M190,540 L175,570 L165,600 L155,630" fill="none" stroke="#ff8c33" stroke-width="0.4" opacity="0.5"/>
+                            <path d="M310,540 L325,570 L335,600 L345,630" fill="none" stroke="#ff8c33" stroke-width="0.4" opacity="0.5"/>
+                            <path d="M220,540 L210,580 L200,620" fill="none" stroke="#ff8c33" stroke-width="0.4" opacity="0.5"/>
+                            <path d="M280,540 L290,580 L300,620" fill="none" stroke="#ff8c33" stroke-width="0.4" opacity="0.5"/>
+                        </g>
+
+                        <!-- ==================== LAYER 6: HAND / FINGERS ==================== -->
+                        <g class="bp-layer" id="bpLayer6" data-depth="250">
+                            <!-- Palm -->
+                            <path d="M190,540 L185,580 L190,610 L210,620 L250,625 L290,620 L310,610 L315,580 L310,540"
+                                  fill="rgba(255,107,0,0.03)" stroke="#ff6b00" stroke-width="0.8"/>
+
+                            <!-- Thumb -->
+                            <path d="M190,580 L170,590 L155,610 L145,630 L140,650"
+                                  fill="none" stroke="#ff8c33" stroke-width="0.8"/>
+                            <circle cx="140" cy="650" r="4" fill="none" stroke="#ff6b00" stroke-width="0.5"/>
+
+                            <!-- Index finger -->
+                            <path d="M200,620 L195,660 L190,700 L188,730"
+                                  fill="none" stroke="#ff8c33" stroke-width="0.8"/>
+                            <circle cx="188" cy="730" r="3" fill="none" stroke="#ff6b00" stroke-width="0.5"/>
+
+                            <!-- Middle finger -->
+                            <path d="M220,625 L218,670 L215,710 L215,745"
+                                  fill="none" stroke="#ff8c33" stroke-width="0.8"/>
+                            <circle cx="215" cy="745" r="3" fill="none" stroke="#ff6b00" stroke-width="0.5"/>
+
+                            <!-- Ring finger -->
+                            <path d="M280,625 L282,670 L285,710 L285,745"
+                                  fill="none" stroke="#ff8c33" stroke-width="0.8"/>
+                            <circle cx="285" cy="745" r="3" fill="none" stroke="#ff6b00" stroke-width="0.5"/>
+
+                            <!-- Pinky -->
+                            <path d="M300,620 L305,660 L310,700 L312,730"
+                                  fill="none" stroke="#ff8c33" stroke-width="0.8"/>
+                            <circle cx="312" cy="730" r="3" fill="none" stroke="#ff6b00" stroke-width="0.5"/>
+
+                            <!-- Finger joints -->
+                            <circle cx="195" cy="660" r="3" fill="none" stroke="#ff6b00" stroke-width="0.4" opacity="0.5"/>
+                            <circle cx="190" cy="700" r="3" fill="none" stroke="#ff6b00" stroke-width="0.4" opacity="0.5"/>
+                            <circle cx="218" cy="670" r="3" fill="none" stroke="#ff6b00" stroke-width="0.4" opacity="0.5"/>
+                            <circle cx="215" cy="710" r="3" fill="none" stroke="#ff6b00" stroke-width="0.4" opacity="0.5"/>
+                            <circle cx="282" cy="670" r="3" fill="none" stroke="#ff6b00" stroke-width="0.4" opacity="0.5"/>
+                            <circle cx="285" cy="710" r="3" fill="none" stroke="#ff6b00" stroke-width="0.4" opacity="0.5"/>
+                            <circle cx="305" cy="660" r="3" fill="none" stroke="#ff6b00" stroke-width="0.4" opacity="0.5"/>
+                            <circle cx="310" cy="700" r="3" fill="none" stroke="#ff6b00" stroke-width="0.4" opacity="0.5"/>
+                        </g>
+
+                        <!-- ==================== LAYER 7: ANNOTATIONS ==================== -->
+                        <g class="bp-layer" id="bpLayer7" data-depth="300">
+                            <!-- Dimension: shoulder width -->
+                            <line x1="185" y1="55" x2="315" y2="55" stroke="rgba(255,107,0,0.4)" stroke-width="0.5"/>
+                            <line x1="185" y1="50" x2="185" y2="60" stroke="rgba(255,107,0,0.4)" stroke-width="0.5"/>
+                            <line x1="315" y1="50" x2="315" y2="60" stroke="rgba(255,107,0,0.4)" stroke-width="0.5"/>
+                            <text x="250" y="52" text-anchor="middle" class="bp-annotation">130mm</text>
+
+                            <!-- Dimension: arm length -->
+                            <line x1="155" y1="60" x2="145" y2="60" stroke="rgba(255,107,0,0.4)" stroke-width="0.5"/>
+                            <line x1="155" y1="750" x2="145" y2="750" stroke="rgba(255,107,0,0.4)" stroke-width="0.5"/>
+                            <line x1="145" y1="60" x2="145" y2="750" stroke="rgba(255,107,0,0.4)" stroke-width="0.5"/>
+                            <text x="140" y="400" text-anchor="middle" class="bp-annotation" transform="rotate(-90, 140, 400)">690mm</text>
+
+                            <!-- Callouts -->
+                            <line x1="200" y1="120" x2="370" y2="100" stroke="rgba(255,107,0,0.3)" stroke-width="0.3"/>
+                            <text x="375" y="103" class="bp-annotation">SERVO: MG-996R</text>
+
+                            <line x1="250" y1="365" x2="370" y2="350" stroke="rgba(255,107,0,0.3)" stroke-width="0.3"/>
+                            <text x="375" y="353" class="bp-annotation">ACTUATOR: LA-12</text>
+
+                            <line x1="190" y1="540" x2="100" y2="520" stroke="rgba(255,107,0,0.3)" stroke-width="0.3"/>
+                            <text x="30" y="523" class="bp-annotation">PALM SENSOR ARRAY</text>
+
+                            <line x1="215" y1="745" x2="370" y2="730" stroke="rgba(255,107,0,0.3)" stroke-width="0.3"/>
+                            <text x="375" y="733" class="bp-annotation">GRIP: 45N MAX</text>
+
+                            <!-- Layer depth labels -->
+                            <text x="470" y="100" class="bp-annotation" fill="rgba(255,107,0,0.3)">L1: OUTLINE</text>
+                            <text x="470" y="120" class="bp-annotation" fill="rgba(255,107,0,0.3)">L2: STRUCTURE</text>
+                            <text x="470" y="140" class="bp-annotation" fill="rgba(255,107,0,0.3)">L3: MECHANICAL</text>
+                            <text x="470" y="160" class="bp-annotation" fill="rgba(255,107,0,0.3)">L4: ARMOR</text>
+                            <text x="470" y="180" class="bp-annotation" fill="rgba(255,107,0,0.3)">L5: CIRCUITS</text>
+                            <text x="470" y="200" class="bp-annotation" fill="rgba(255,107,0,0.3)">L6: HAND</text>
+                            <text x="470" y="220" class="bp-annotation" fill="rgba(255,107,0,0.3)">L7: ANNOTATIONS</text>
+
+                            <!-- Status indicators -->
+                            <circle cx="475" cy="770" r="3" fill="#ff6b00" opacity="0.6">
+                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="485" y="773" class="bp-annotation">SYSTEMS ONLINE</text>
+                        </g>
+
+                        <!-- Floating particles -->
+                        <g class="bp-layer" id="bpParticles">
+                            <circle cx="250" cy="400" r="1" fill="#ff6b00" opacity="0.3">
+                                <animate attributeName="cy" values="400;390;400" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="200" cy="300" r="0.8" fill="#ff8c33" opacity="0.2">
+                                <animate attributeName="cy" values="300;295;300" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="300" cy="500" r="0.8" fill="#ff8c33" opacity="0.2">
+                                <animate attributeName="cy" values="500;492;500" dur="3.5s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                    </svg>
+
+                    <div class="layer-indicator">
+                        <div class="layer-dot active" data-layer="0"></div>
+                        <div class="layer-dot" data-layer="1"></div>
+                        <div class="layer-dot" data-layer="2"></div>
+                        <div class="layer-dot" data-layer="3"></div>
+                        <div class="layer-dot" data-layer="4"></div>
+                        <div class="layer-dot" data-layer="5"></div>
+                        <div class="layer-dot" data-layer="6"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info panels -->
+            <div class="exoskeleton-info">
+                <div class="layer-info-panel">
+                    <div class="layer-info" data-layer="0" style="transform: translateY(0);">
+                        <h3>Layer 1 — Контур</h3>
+                        <p>Базовый внешний контур модуля руки экзоскелета. Определяет общую геометрию и пропорции конструкции.</p>
+                        <div class="layer-specs">
+                            МАТЕРИАЛ: <span>Ti-6Al-4V</span><br>
+                            МАССА: <span>2.4 кг</span><br>
+                            ГАБАРИТЫ: <span>130×690 мм</span>
+                        </div>
+                    </div>
+                    <div class="layer-info" data-layer="1" style="transform: translateY(0);">
+                        <h3>Layer 2 — Структура</h3>
+                        <p>Внутренний силовой каркас. Поперечные рёбра жёсткости обеспечивают устойчивость к изгибающим нагрузкам.</p>
+                        <div class="layer-specs">
+                            ПРОЧНОСТЬ: <span>850 МПа</span><br>
+                            РЁБРА: <span>6 шт</span><br>
+                            УЗЕЛ ЛОКТЯ: <span>Ø 80мм</span>
+                        </div>
+                    </div>
+                    <div class="layer-info" data-layer="2">
+                        <h3>Layer 3 — Механика</h3>
+                        <p>Сервоприводы, актуаторы и гидравлические линии. Обеспечивают 6 степеней свободы движения.</p>
+                        <div class="layer-specs">
+                            ПРИВОДЫ: <span>MG-996R ×4</span><br>
+                            МОМЕНТ: <span>9.4 кг·см</span><br>
+                            СТЕПЕНИ СВОБОДЫ: <span>6</span>
+                        </div>
+                    </div>
+                    <div class="layer-info" data-layer="3">
+                        <h3>Layer 4 — Бронепанели</h3>
+                        <p>Защитные панели из композитного материала. Модульная конструкция позволяет быструю замену.</p>
+                        <div class="layer-specs">
+                            ПОКРЫТИЕ: <span>92%</span><br>
+                            ТОЛЩИНА: <span>3.2 мм</span><br>
+                            МОДУЛЬНОСТЬ: <span>8 панелей</span>
+                        </div>
+                    </div>
+                    <div class="layer-info" data-layer="4">
+                        <h3>Layer 5 — Электрика</h3>
+                        <p>Нейронная проводка и сенсорная сеть. 128 точек мониторинга состояния модуля в реальном времени.</p>
+                        <div class="layer-specs">
+                            СЕНСОРЫ: <span>128 точек</span><br>
+                            ШИНА: <span>CAN 2.0B</span><br>
+                            ЗАДЕРЖКА: <span><2мс</span>
+                        </div>
+                    </div>
+                    <div class="layer-info" data-layer="5">
+                        <h3>Layer 6 — Кисть</h3>
+                        <p>Артикулированная кисть с 5 пальцами. Максимальное усилие захвата 45Н. Тактильные сенсоры на каждом пальце.</p>
+                        <div class="layer-specs">
+                            ПАЛЬЦЫ: <span>5 + большой</span><br>
+                            ЗАХВАТ: <span>45Н max</span><br>
+                            СЕНСОРЫ: <span>24 точки</span>
+                        </div>
+                    </div>
+                    <div class="layer-info" data-layer="6">
+                        <h3>Layer 7 — Аннотации</h3>
+                        <p>Технические обозначения, размерные цепи и спецификации. Полная документация для производства.</p>
+                        <div class="layer-specs">
+                            ДОКУМЕНТАЦИЯ: <span>ISO 9001</span><br>
+                            ДОПУСК: <span>±0.05мм</span><br>
+                            СТАТУС: <span>ONLINE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-hint">
+                    <span>▼ SCROLL ▼</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
+```
     <section class="about" id="about">
         <h2 class="section-title reveal">О проекте</h2>
         <p class="about-text reveal">
@@ -390,5 +830,5 @@
         <div class="footer-text">© 2026 ExoLab.</div>
         <div class="footer-text">Powered by <a href="https://animejs.com/" target="_blank">Anime.js</a></div>
     </footer>
-<script defer>(()=>{var e={334:()=>{window.animateHero=function(){anime({targets:".hero .reveal",translateY:[40,0],opacity:[0,1],duration:1e3,easing:"easeOutExpo",delay:anime.stagger(200)}),anime({targets:".hero-logo polygon",strokeDashoffset:[anime.setDashoffset,0],easing:"easeInOutSine",duration:1500,delay:anime.stagger(200,{start:500}),direction:"alternate",loop:!1})}},526:()=>{window.addEventListener("scroll",(()=>{const e=window.scrollY;gridScrollY=.3*e;const t=document.getElementById("header");e>50?t.classList.add("scrolled"):t.classList.remove("scrolled")}))},828:()=>{document.querySelectorAll(".project-card").forEach((e=>{e.addEventListener("mousemove",(t=>{const n=e.getBoundingClientRect(),a=t.clientX-n.left,i=t.clientY-n.top,o=n.width/2,r=(i-n.height/2)/20,s=(o-a)/20;e.style.transform=`translateY(-8px) perspective(1000px) rotateX(${r}deg) rotateY(${s}deg)`})),e.addEventListener("mouseleave",(()=>{e.style.transform="translateY(0) perspective(1000px) rotateX(0) rotateY(0)"}))}))},166:()=>{document.querySelectorAll(".cta-btn, .submit-btn").forEach((e=>{e.addEventListener("click",(function(e){const t=this.getBoundingClientRect(),n=document.createElement("span");n.className="ripple",n.style.left=e.clientX-t.left+"px",n.style.top=e.clientY-t.top+"px",this.appendChild(n),setTimeout((()=>n.remove()),600)}))}))},765:()=>{const e=new IntersectionObserver((e=>{e.forEach((e=>{if(e.isIntersecting){e.target.classList.add("active"),anime({targets:e.target,translateY:[40,0],opacity:[0,1],duration:800,easing:"easeOutExpo"});const t=e.target.querySelector(".tech-item-fill");if(t){const e=t.getAttribute("data-width");setTimeout((()=>{t.style.width=e+"%"}),300)}}}))}),{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal").forEach((t=>{e.observe(t)}))},539:()=>{document.querySelectorAll(".tech-item").forEach((e=>{e.addEventListener("mouseenter",(()=>{const t=e.querySelector(".tech-item-icon");anime({targets:t,scale:[1,1.15],duration:300,easing:"easeOutElastic(1, .5)"})})),e.addEventListener("mouseleave",(()=>{const t=e.querySelector(".tech-item-icon");anime({targets:t,scale:1,duration:300,easing:"easeOutQuad"})}))}))},893:()=>{const e=document.getElementById("loadingBarFill"),t=document.getElementById("loadingScreen");let n=0;const a=setInterval((()=>{n+=15*Math.random()+5,n>=100&&(n=100,clearInterval(a),setTimeout((()=>{anime({targets:t,opacity:0,duration:800,easing:"easeInOutQuad",complete:()=>{t.style.display="none",animateHero()}})}),300)),e.style.width=n+"%"}),150)},419:()=>{const e=document.getElementById("customCursor");let t=0,n=0,a=0,i=0;const o=[];let r=performance.now();for(let e=0;e<5;e++){const t=document.createElement("div");t.className="cursor-trail",t.style.opacity=.3-.05*e,t.style.width=8-e+"px",t.style.height=8-e+"px",t.style.pointerEvents="none",document.body.appendChild(t),o.push({el:t,x:0,y:0})}function s(e,t,n,a){const i=n*(60*a);return e+(t-e)*Math.min(i,1)}document.addEventListener("mousemove",(e=>{t=e.clientX,n=e.clientY}),{passive:!0}),document.querySelectorAll('a, button, .project-card, .tech-item, .social-link, .cta-btn, .submit-btn, [data-cursor="hover"]').forEach((t=>{t.addEventListener("mouseenter",(()=>e.classList.add("hovering")),{passive:!0}),t.addEventListener("mouseleave",(()=>e.classList.remove("hovering")),{passive:!0})})),a=t,i=n,o.forEach((e=>{e.x=t,e.y=n})),requestAnimationFrame((function l(c){const d=c||performance.now();let h=(d-r)/1e3;r=d,h>.25&&(h=.25),a=s(a,t,.4,h),i=s(i,n,.4,h),e.style.left=a+"px",e.style.top=i+"px";let u=a,m=i;for(let e=0;e<o.length;e++){const t=o[e],n=.3-.04*e;t.x=s(t.x,u,n,h),t.y=s(t.y,m,n,h),t.el.style.left=t.x+"px",t.el.style.top=t.y+"px",u=t.x,m=t.y}requestAnimationFrame(l)}))},482:()=>{const e=document.getElementById("gridCanvas"),t=e.getContext("2d");let n=.15,a=1;function i(){e.width=window.innerWidth,e.height=window.innerHeight}i(),window.addEventListener("resize",i),function i(){t.clearRect(0,0,e.width,e.height),t.strokeStyle=`rgba(216, 219, 0, ${n})`,t.lineWidth=.5;for(let n=0;n<e.width;n+=200)t.beginPath(),t.moveTo(n,0),t.lineTo(n,e.height),t.stroke();for(let n=-200;n<e.height+200;n+=200)t.beginPath(),t.moveTo(0,n),t.lineTo(e.width,n),t.stroke();n+=.001*a,n>=.25&&(a=-1),n<=.1&&(a=1),requestAnimationFrame(i)}()},924:()=>{const e=document.getElementById("noiseCanvas"),t=e.getContext("2d");let n=0,a=0;function i(){e.width=window.innerWidth/2,e.height=window.innerHeight/2}i(),window.addEventListener("resize",i);let o=0;!function i(){n+=.3,a+=.5,e.style.transform=`translate(${n%10}px, ${a%10}px)`,o++,o%3==0&&function(){const n=e.width,a=e.height,i=t.createImageData(n,a),o=i.data;for(let e=0;e<o.length;e+=4){const t=255*Math.random();o[e]=t,o[e+1]=t,o[e+2]=t,o[e+3]=255}t.putImageData(i,0,0)}(),requestAnimationFrame(i)}()},819:()=>{const e=document.querySelectorAll("section[id]"),t=document.querySelectorAll(".nav a");window.addEventListener("scroll",(()=>{let n="";e.forEach((e=>{const t=e.offsetTop;window.scrollY>=t-200&&(n=e.getAttribute("id"))})),t.forEach((e=>{e.style.color="",e.style.textShadow="",e.getAttribute("href")==="#"+n&&(e.style.color="var(--accent)",e.style.textShadow="0 0 10px var(--neon-50)")}))}))},683:()=>{const e=document.getElementById("mobileMenuBtn"),t=document.getElementById("mainNav");e.addEventListener("click",(()=>{t.classList.toggle("open")})),t.querySelectorAll("a").forEach((e=>{e.addEventListener("click",(()=>{t.classList.remove("open")}))}))},868:()=>{document.querySelectorAll('a[href^="#"]').forEach((e=>{e.addEventListener("click",(function(e){e.preventDefault();const t=this.getAttribute("href"),n=document.querySelector(t);n&&n.scrollIntoView({behavior:"smooth",block:"start"})}))}))}},t={};function n(a){var i=t[a];if(void 0!==i)return i.exports;var o=t[a]={exports:{}};return e[a](o,o.exports,n),o.exports}(()=>{"use strict";function e(e,t){var n=document.getElementById(e);if(n){var a;switch(t){case 0:default:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),i=1e3*Math.random();function o(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return o(),window.addEventListener("resize",o),{draw:function e(){i+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var o=0;o<30;o++){var r=(.5*Math.sin(.3*i+.7*o)+.5)*t;a.beginPath(),a.moveTo(r,0),a.lineTo(r,n),a.strokeStyle="rgba(0,240,255,"+(.02+.01*Math.sin(i+o))+")",a.lineWidth=1,a.stroke()}var s=80*i%n;a.beginPath(),a.moveTo(0,s),a.lineTo(t,s),a.strokeStyle="rgba(0,240,255,0.15)",a.lineWidth=2,a.stroke();for(var l=0;l<15;l++){var c=(.5*Math.sin(.5*i+1.2*l)+.5)*t,d=(.5*Math.cos(.3*i+.9*l)+.5)*n,h=2+1*Math.sin(i+l);a.beginPath(),a.arc(c,d,h,0,2*Math.PI),a.fillStyle="rgba(0,240,255,"+(.3+.2*Math.sin(2*i+l))+")",a.fill()}requestAnimationFrame(e)},resize:o}}(n);break;case 1:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),i=1e3*Math.random();function o(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return o(),window.addEventListener("resize",o),{draw:function e(){i+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var o=.5*t,r=.5*n,s=.35*Math.min(t,n),l=0;l<4;l++){var c=s*(l+1)/4;a.beginPath(),a.arc(o,r,c,0,2*Math.PI),a.strokeStyle="rgba(0,240,255,"+(.08-.01*l)+")",a.lineWidth=1,a.stroke()}var d=.8*i;a.beginPath(),a.moveTo(o,r),a.lineTo(o+Math.cos(d)*s,r+Math.sin(d)*s),a.strokeStyle="rgba(0,240,255,0.2)",a.lineWidth=1.5,a.stroke(),a.beginPath(),a.moveTo(o,r),a.arc(o,r,s,d-.8,d),a.closePath();var h=a.createRadialGradient(o,r,0,o,r,s);h.addColorStop(0,"rgba(0,240,255,0.06)"),h.addColorStop(1,"rgba(0,240,255,0)"),a.fillStyle=h,a.fill();for(var u=0;u<8;u++){var m=o+Math.cos(.15*i+1.5*u)*(.6*s+20*Math.sin(u)),g=r+Math.sin(.2*i+1.3*u)*(.6*s+15*Math.cos(u));a.beginPath(),a.arc(m,g,2,0,2*Math.PI),a.fillStyle="rgba(180,0,255,"+(.4+.2*Math.sin(i+u))+")",a.fill()}requestAnimationFrame(e)},resize:o}}(n);break;case 2:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),i=1e3*Math.random();function o(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return o(),window.addEventListener("resize",o),{draw:function e(){i+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var o=0;o<20;o++){a.beginPath();for(var r=o/20*n,s=0;s<=t;s+=3){var l=r+Math.sin(.01*s+.5*i+.8*o)*(15+2*o);0===s?a.moveTo(s,l):a.lineTo(s,l)}a.strokeStyle="rgba(180,0,255,"+(.03+.005*o)+")",a.lineWidth=1,a.stroke()}for(var c=0;c<12;c++){var d=(.5*Math.sin(.2*i+.9*c)+.5)*t,h=(.5*Math.cos(.15*i+1.1*c)+.5)*n,u=3+2*Math.sin(i+2*c),m=a.createRadialGradient(d,h,0,d,h,4*u);m.addColorStop(0,"rgba(0,240,255,"+(.5+.2*Math.sin(i+c))+")"),m.addColorStop(1,"rgba(0,240,255,0)"),a.beginPath(),a.arc(d,h,4*u,0,2*Math.PI),a.fillStyle=m,a.fill()}requestAnimationFrame(e)},resize:o}}(n)}a&&(new IntersectionObserver((function(e){e.forEach((function(e){e.isIntersecting&&a.draw()}))}),{threshold:.1}).observe(n),a.draw())}}function t(){e("vidCanvas1",0),e("vidCanvas2",1),e("vidCanvas3",2)}n(819),n(683),n(868),n(419),n(482),n(924),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t();const a=document.getElementById("particlesCanvas"),i=a.getContext("2d",{alpha:!0,desynchronized:!0});let o=[];const r=1e3/60;let s=0,l=0,c=0;class d{constructor(e,t){this.reset(e,t),this.vx=.3*(Math.random()-.5),this.vy=.3*(Math.random()-.5),this.radius=2*Math.random()+1,this.alpha=.5*Math.random()+.2,this._color="216,219,0"}reset(e,t){this.x=Math.random()*e,this.y=Math.random()*t}update(e,t){this.x+=this.vx,this.y+=this.vy,this.x<0?this.x=e:this.x>e&&(this.x=0),this.y<0?this.y=t:this.y>t&&(this.y=0)}draw(e){e.beginPath(),e.arc(this.x,this.y,this.radius,0,2*Math.PI),e.fillStyle=`rgba(${this._color},${this.alpha})`,e.fill()}}function h(){l=a.width=window.innerWidth,c=a.height=window.innerHeight,function(){o=[];for(let e=0;e<80;e++)o.push(new d(l,c))}()}h(),window.addEventListener("resize",h,{passive:!0}),requestAnimationFrame((function e(t){if(t-s<r)requestAnimationFrame(e);else{s=t,i.clearRect(0,0,l,c);for(let e=0;e<o.length;e++){const t=o[e];t.update(l,c),t.draw(i)}i.lineWidth=.5;for(let e=0;e<o.length;e++){const t=o[e];for(let n=e+1;n<o.length;n++){const e=o[n],a=t.x-e.x,r=t.y-e.y,s=a*a+r*r;if(s<9e4){const n=.15*(1-s/9e4);i.beginPath(),i.moveTo(t.x,t.y),i.lineTo(e.x,e.y),i.strokeStyle=`rgba(${t._color},${n})`,i.stroke()}}}requestAnimationFrame(e)}})),n(334),n(526),n(828),n(166),n(765),n(539),n(893)})()})();</script></body>
+<script defer>(()=>{var e={703:()=>{const e=[document.getElementById("bpLayer1"),document.getElementById("bpLayer2"),document.getElementById("bpLayer3"),document.getElementById("bpLayer4"),document.getElementById("bpLayer5"),document.getElementById("bpLayer6"),document.getElementById("bpLayer7")],t=document.querySelectorAll(".layer-info"),n=document.querySelectorAll(".layer-dot"),a=document.getElementById("exoskeleton");function o(){if(!a)return;const o=a.getBoundingClientRect(),i=a.offsetHeight-window.innerHeight,r=-o.top,s=Math.max(0,Math.min(1,r/i)),l=Math.min(6,Math.floor(7*s));e.forEach(((e,t)=>{if(!e)return;const n=Math.max(0,Math.min(1,7*s-t)),a=40*(6-t)*(1-n),o=n;e.style.transform=`translateY(-${a}px)`,e.style.opacity=Math.max(0,o),e.style.filter=t<=l?`drop-shadow(0 0 ${l-t+2}px rgba(255,107,0,${.3+.1*(l-t)}))`:""})),t.forEach(((e,t)=>{t===l?(e.classList.add("visible"),e.style.borderColor="rgba(255, 107, 0, 0.4)",e.style.boxShadow="0 0 15px rgba(255, 107, 0, 0.1)"):t<l?(e.classList.add("visible"),e.style.borderColor="rgba(255, 107, 0, 0.2)",e.style.boxShadow="none"):(e.classList.remove("visible"),e.style.borderColor="",e.style.boxShadow="")})),n.forEach(((e,t)=>{t<=l?e.classList.add("active"):e.classList.remove("active")}))}document.addEventListener("DOMContentLoaded",(()=>{setTimeout((()=>{animateHelmet()}),1e3),window.addEventListener("scroll",o),o()}))},808:()=>{window.animateHelmet=function(){[{id:"#helmetOuter",delay:200},{id:"#helmetFacePlate",delay:600},{id:"#helmetVisor",delay:1e3},{id:"#helmetJaw",delay:1400},{id:"#helmetSides",delay:1800},{id:"#helmetDetails",delay:2200},{id:"#helmetParticles",delay:2500},{id:"#helmetAnnotations",delay:2800}].forEach((e=>{const t=document.querySelectorAll(`${e.id} path, ${e.id} line, ${e.id} rect, ${e.id} ellipse`);setTimeout((()=>{anime({targets:e.id,opacity:[0,1],duration:800,easing:"easeOutQuad"}),t.forEach((e=>{const t=e.getTotalLength?e.getTotalLength():500;e.style.strokeDasharray=t,e.style.strokeDashoffset=t,anime({targets:e,strokeDashoffset:[t,0],duration:1200,easing:"easeInOutSine"})}))}),e.delay)}))}},334:()=>{window.animateHero=function(){anime({targets:".hero .reveal",translateY:[40,0],opacity:[0,1],duration:1e3,easing:"easeOutExpo",delay:anime.stagger(200)}),anime({targets:".hero-logo polygon",strokeDashoffset:[anime.setDashoffset,0],easing:"easeInOutSine",duration:1500,delay:anime.stagger(200,{start:500}),direction:"alternate",loop:!1})}},526:()=>{window.addEventListener("scroll",(()=>{const e=window.scrollY;gridScrollY=.3*e;const t=document.getElementById("header");e>50?t.classList.add("scrolled"):t.classList.remove("scrolled")}))},828:()=>{document.querySelectorAll(".project-card").forEach((e=>{e.addEventListener("mousemove",(t=>{const n=e.getBoundingClientRect(),a=t.clientX-n.left,o=t.clientY-n.top,i=n.width/2,r=(o-n.height/2)/20,s=(i-a)/20;e.style.transform=`translateY(-8px) perspective(1000px) rotateX(${r}deg) rotateY(${s}deg)`})),e.addEventListener("mouseleave",(()=>{e.style.transform="translateY(0) perspective(1000px) rotateX(0) rotateY(0)"}))}))},166:()=>{document.querySelectorAll(".cta-btn, .submit-btn").forEach((e=>{e.addEventListener("click",(function(e){const t=this.getBoundingClientRect(),n=document.createElement("span");n.className="ripple",n.style.left=e.clientX-t.left+"px",n.style.top=e.clientY-t.top+"px",this.appendChild(n),setTimeout((()=>n.remove()),600)}))}))},765:()=>{const e=new IntersectionObserver((e=>{e.forEach((e=>{if(e.isIntersecting){e.target.classList.add("active"),anime({targets:e.target,translateY:[40,0],opacity:[0,1],duration:800,easing:"easeOutExpo"});const t=e.target.querySelector(".tech-item-fill");if(t){const e=t.getAttribute("data-width");setTimeout((()=>{t.style.width=e+"%"}),300)}}}))}),{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal").forEach((t=>{e.observe(t)}))},539:()=>{document.querySelectorAll(".tech-item").forEach((e=>{e.addEventListener("mouseenter",(()=>{const t=e.querySelector(".tech-item-icon");anime({targets:t,scale:[1,1.15],duration:300,easing:"easeOutElastic(1, .5)"})})),e.addEventListener("mouseleave",(()=>{const t=e.querySelector(".tech-item-icon");anime({targets:t,scale:1,duration:300,easing:"easeOutQuad"})}))}))},893:()=>{const e=document.getElementById("loadingBarFill"),t=document.getElementById("loadingScreen");let n=0;const a=setInterval((()=>{n+=15*Math.random()+5,n>=100&&(n=100,clearInterval(a),setTimeout((()=>{anime({targets:t,opacity:0,duration:800,easing:"easeInOutQuad",complete:()=>{t.style.display="none",animateHero()}})}),300)),e.style.width=n+"%"}),150)},419:()=>{const e=document.getElementById("customCursor");let t=0,n=0,a=0,o=0;const i=[];let r=performance.now();for(let e=0;e<5;e++){const t=document.createElement("div");t.className="cursor-trail",t.style.opacity=.3-.05*e,t.style.width=8-e+"px",t.style.height=8-e+"px",t.style.pointerEvents="none",document.body.appendChild(t),i.push({el:t,x:0,y:0})}function s(e,t,n,a){const o=n*(60*a);return e+(t-e)*Math.min(o,1)}document.addEventListener("mousemove",(e=>{t=e.clientX,n=e.clientY}),{passive:!0}),document.querySelectorAll('a, button, .project-card, .tech-item, .social-link, .cta-btn, .submit-btn, [data-cursor="hover"]').forEach((t=>{t.addEventListener("mouseenter",(()=>e.classList.add("hovering")),{passive:!0}),t.addEventListener("mouseleave",(()=>e.classList.remove("hovering")),{passive:!0})})),a=t,o=n,i.forEach((e=>{e.x=t,e.y=n})),requestAnimationFrame((function l(d){const c=d||performance.now();let h=(c-r)/1e3;r=c,h>.25&&(h=.25),a=s(a,t,.4,h),o=s(o,n,.4,h),e.style.left=a+"px",e.style.top=o+"px";let m=a,u=o;for(let e=0;e<i.length;e++){const t=i[e],n=.3-.04*e;t.x=s(t.x,m,n,h),t.y=s(t.y,u,n,h),t.el.style.left=t.x+"px",t.el.style.top=t.y+"px",m=t.x,u=t.y}requestAnimationFrame(l)}))},482:()=>{const e=document.getElementById("gridCanvas"),t=e.getContext("2d");let n=.15,a=1;function o(){e.width=window.innerWidth,e.height=window.innerHeight}o(),window.addEventListener("resize",o),function o(){t.clearRect(0,0,e.width,e.height),t.strokeStyle=`rgba(216, 219, 0, ${n})`,t.lineWidth=.5;for(let n=0;n<e.width;n+=200)t.beginPath(),t.moveTo(n,0),t.lineTo(n,e.height),t.stroke();for(let n=-200;n<e.height+200;n+=200)t.beginPath(),t.moveTo(0,n),t.lineTo(e.width,n),t.stroke();n+=.001*a,n>=.25&&(a=-1),n<=.1&&(a=1),requestAnimationFrame(o)}()},924:()=>{const e=document.getElementById("noiseCanvas"),t=e.getContext("2d");let n=0,a=0;function o(){e.width=window.innerWidth/2,e.height=window.innerHeight/2}o(),window.addEventListener("resize",o);let i=0;!function o(){n+=.3,a+=.5,e.style.transform=`translate(${n%10}px, ${a%10}px)`,i++,i%3==0&&function(){const n=e.width,a=e.height,o=t.createImageData(n,a),i=o.data;for(let e=0;e<i.length;e+=4){const t=255*Math.random();i[e]=t,i[e+1]=t,i[e+2]=t,i[e+3]=255}t.putImageData(o,0,0)}(),requestAnimationFrame(o)}()},819:()=>{const e=document.querySelectorAll("section[id]"),t=document.querySelectorAll(".nav a");window.addEventListener("scroll",(()=>{let n="";e.forEach((e=>{const t=e.offsetTop;window.scrollY>=t-200&&(n=e.getAttribute("id"))})),t.forEach((e=>{e.style.color="",e.style.textShadow="",e.getAttribute("href")==="#"+n&&(e.style.color="var(--accent)",e.style.textShadow="0 0 10px var(--neon-50)")}))}))},683:()=>{const e=document.getElementById("mobileMenuBtn"),t=document.getElementById("mainNav");e.addEventListener("click",(()=>{t.classList.toggle("open")})),t.querySelectorAll("a").forEach((e=>{e.addEventListener("click",(()=>{t.classList.remove("open")}))}))},868:()=>{document.querySelectorAll('a[href^="#"]').forEach((e=>{e.addEventListener("click",(function(e){e.preventDefault();const t=this.getAttribute("href"),n=document.querySelector(t);n&&n.scrollIntoView({behavior:"smooth",block:"start"})}))}))}},t={};function n(a){var o=t[a];if(void 0!==o)return o.exports;var i=t[a]={exports:{}};return e[a](i,i.exports,n),i.exports}(()=>{"use strict";function e(e,t){var n=document.getElementById(e);if(n){var a;switch(t){case 0:default:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),o=1e3*Math.random();function i(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return i(),window.addEventListener("resize",i),{draw:function e(){o+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var i=0;i<30;i++){var r=(.5*Math.sin(.3*o+.7*i)+.5)*t;a.beginPath(),a.moveTo(r,0),a.lineTo(r,n),a.strokeStyle="rgba(0,240,255,"+(.02+.01*Math.sin(o+i))+")",a.lineWidth=1,a.stroke()}var s=80*o%n;a.beginPath(),a.moveTo(0,s),a.lineTo(t,s),a.strokeStyle="rgba(0,240,255,0.15)",a.lineWidth=2,a.stroke();for(var l=0;l<15;l++){var d=(.5*Math.sin(.5*o+1.2*l)+.5)*t,c=(.5*Math.cos(.3*o+.9*l)+.5)*n,h=2+1*Math.sin(o+l);a.beginPath(),a.arc(d,c,h,0,2*Math.PI),a.fillStyle="rgba(0,240,255,"+(.3+.2*Math.sin(2*o+l))+")",a.fill()}requestAnimationFrame(e)},resize:i}}(n);break;case 1:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),o=1e3*Math.random();function i(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return i(),window.addEventListener("resize",i),{draw:function e(){o+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var i=.5*t,r=.5*n,s=.35*Math.min(t,n),l=0;l<4;l++){var d=s*(l+1)/4;a.beginPath(),a.arc(i,r,d,0,2*Math.PI),a.strokeStyle="rgba(0,240,255,"+(.08-.01*l)+")",a.lineWidth=1,a.stroke()}var c=.8*o;a.beginPath(),a.moveTo(i,r),a.lineTo(i+Math.cos(c)*s,r+Math.sin(c)*s),a.strokeStyle="rgba(0,240,255,0.2)",a.lineWidth=1.5,a.stroke(),a.beginPath(),a.moveTo(i,r),a.arc(i,r,s,c-.8,c),a.closePath();var h=a.createRadialGradient(i,r,0,i,r,s);h.addColorStop(0,"rgba(0,240,255,0.06)"),h.addColorStop(1,"rgba(0,240,255,0)"),a.fillStyle=h,a.fill();for(var m=0;m<8;m++){var u=i+Math.cos(.15*o+1.5*m)*(.6*s+20*Math.sin(m)),g=r+Math.sin(.2*o+1.3*m)*(.6*s+15*Math.cos(m));a.beginPath(),a.arc(u,g,2,0,2*Math.PI),a.fillStyle="rgba(180,0,255,"+(.4+.2*Math.sin(o+m))+")",a.fill()}requestAnimationFrame(e)},resize:i}}(n);break;case 2:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),o=1e3*Math.random();function i(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return i(),window.addEventListener("resize",i),{draw:function e(){o+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var i=0;i<20;i++){a.beginPath();for(var r=i/20*n,s=0;s<=t;s+=3){var l=r+Math.sin(.01*s+.5*o+.8*i)*(15+2*i);0===s?a.moveTo(s,l):a.lineTo(s,l)}a.strokeStyle="rgba(180,0,255,"+(.03+.005*i)+")",a.lineWidth=1,a.stroke()}for(var d=0;d<12;d++){var c=(.5*Math.sin(.2*o+.9*d)+.5)*t,h=(.5*Math.cos(.15*o+1.1*d)+.5)*n,m=3+2*Math.sin(o+2*d),u=a.createRadialGradient(c,h,0,c,h,4*m);u.addColorStop(0,"rgba(0,240,255,"+(.5+.2*Math.sin(o+d))+")"),u.addColorStop(1,"rgba(0,240,255,0)"),a.beginPath(),a.arc(c,h,4*m,0,2*Math.PI),a.fillStyle=u,a.fill()}requestAnimationFrame(e)},resize:i}}(n)}a&&(new IntersectionObserver((function(e){e.forEach((function(e){e.isIntersecting&&a.draw()}))}),{threshold:.1}).observe(n),a.draw())}}function t(){e("vidCanvas1",0),e("vidCanvas2",1),e("vidCanvas3",2)}n(819),n(683),n(868),n(419),n(482),n(924),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t();const a=document.getElementById("particlesCanvas"),o=a.getContext("2d",{alpha:!0,desynchronized:!0});let i=[];const r=1e3/60;let s=0,l=0,d=0;class c{constructor(e,t){this.reset(e,t),this.vx=.3*(Math.random()-.5),this.vy=.3*(Math.random()-.5),this.radius=2*Math.random()+1,this.alpha=.5*Math.random()+.2,this._color="216,219,0"}reset(e,t){this.x=Math.random()*e,this.y=Math.random()*t}update(e,t){this.x+=this.vx,this.y+=this.vy,this.x<0?this.x=e:this.x>e&&(this.x=0),this.y<0?this.y=t:this.y>t&&(this.y=0)}draw(e){e.beginPath(),e.arc(this.x,this.y,this.radius,0,2*Math.PI),e.fillStyle=`rgba(${this._color},${this.alpha})`,e.fill()}}function h(){l=a.width=window.innerWidth,d=a.height=window.innerHeight,function(){i=[];for(let e=0;e<80;e++)i.push(new c(l,d))}()}h(),window.addEventListener("resize",h,{passive:!0}),requestAnimationFrame((function e(t){if(t-s<r)requestAnimationFrame(e);else{s=t,o.clearRect(0,0,l,d);for(let e=0;e<i.length;e++){const t=i[e];t.update(l,d),t.draw(o)}o.lineWidth=.5;for(let e=0;e<i.length;e++){const t=i[e];for(let n=e+1;n<i.length;n++){const e=i[n],a=t.x-e.x,r=t.y-e.y,s=a*a+r*r;if(s<9e4){const n=.15*(1-s/9e4);o.beginPath(),o.moveTo(t.x,t.y),o.lineTo(e.x,e.y),o.strokeStyle=`rgba(${t._color},${n})`,o.stroke()}}}requestAnimationFrame(e)}})),n(334),n(526),n(828),n(166),n(765),n(539),n(703),n(808),n(893)})()})();</script></body>
 </html>
