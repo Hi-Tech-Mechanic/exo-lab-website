@@ -425,6 +425,7 @@ body {
     font-family: var(--font-mono);
     font-size: 8px;
     fill: var(--blueprint-accent);
+    overflow: visible;
 }
 
 .bp-dimension {
@@ -1340,7 +1341,7 @@ section {
     transition: width 1.5s ease;
 }
 .exoskeleton-section {
-    min-height: 100vh;
+    min-height: 150vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1356,13 +1357,15 @@ section {
     max-width: 1400px;
     width: 100%;
     flex: 1;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
 }
 
 .blueprint-viewer {
     flex: 1;
-    position: sticky;
-    top: 120px;
     min-height: 700px;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
 }
 
 .blueprint-svg-wrapper {
@@ -1370,6 +1373,8 @@ section {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
 }
 
 .blueprint-svg-wrapper svg {
@@ -1384,6 +1389,8 @@ section {
 .exoskeleton-info {
     flex: 0 0 350px;
     position: relative;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
 }
 
 .layer-indicator {

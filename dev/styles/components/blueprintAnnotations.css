@@ -2,6 +2,7 @@
     font-family: var(--font-mono);
     font-size: 8px;
     fill: var(--blueprint-accent);
+    overflow: visible;
 }
 
 .bp-dimension {

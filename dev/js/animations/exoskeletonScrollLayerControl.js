@@ -11,6 +11,7 @@ const bpLayers = [
 const layerInfos = document.querySelectorAll('.layer-info');
 const layerDots = document.querySelectorAll('.layer-dot');
 const exoSection = document.getElementById('exoskeleton');
+const blueprintSvgWrapper = document.querySelector('.blueprint-svg-wrapper');
 
 function updateExoLayers() {
     if (!exoSection) return;
@@ -20,6 +21,15 @@ function updateExoLayers() {
     const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
 
     const currentLayer = Math.min(6, Math.floor(progress * 7));
+
+    // Calculate vertical movement based on scroll progress
+    const maxVerticalMovement = exoSection.offsetHeight; 
+    const verticalMovement = progress * maxVerticalMovement;
+
+    // Apply parallax effect to blueprint viewer and SVG wrapper
+    if (blueprintSvgWrapper) {
+        blueprintSvgWrapper.style.transform = `translateY(${verticalMovement * 0.42}px)`;
+    }
 
     bpLayers.forEach((layer, idx) => {
         if (!layer) return;
