@@ -205,11 +205,11 @@
 
 /* Hover States */
 .video-block:hover .video-wrapper {
-    transform: translateX(-20px) scale(1.02);
+    transform: translateX(-100px) scale(1.1);
 }
 
 .video-block:hover {
     height: 46vh;
     min-height: 300px;
-    max-height: 480px;
+    max-height: 780px;
 }

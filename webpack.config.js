@@ -14,7 +14,7 @@ module.exports = {
     
     output: {
         filename: "[name].bundle.js",
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "./dist"),
     },
 
     module: {
@@ -25,7 +25,7 @@ module.exports = {
             },
             {
                 test: /\.(mp4|mpeg|webm)$/,
-                type: 'asset/resource', // Используем современный Asset Modules вместо устаревшего file-loader
+                type: './dev/videos', // Используем современный Asset Modules вместо устаревшего file-loader
                 generator: {
                     filename: 'videos/[name][ext]'
                 }
@@ -38,7 +38,7 @@ module.exports = {
         
         new HtmlWebpackPlugin({
             template: "./dev/index.html",
-            filename: 'index.html',
+            filename: './index.html',
             // Включаем 'body', чтобы Webpack сам управлял тегами скриптов
             inject: 'body',
             minify: false,
@@ -55,11 +55,15 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, "./dev/images"),
-                    to: path.resolve(__dirname, "dist/images")
+                    to: path.resolve(__dirname, "./dist/images")
                 },
                 {
-                    from: path.resolve(__dirname, "favicon.png"),
-                    to: path.resolve(__dirname, "dist")
+                    from: path.resolve(__dirname, "./dev/videos"),
+                    to: path.resolve(__dirname, "./dist/videos")
+                },
+                {
+                    from: path.resolve(__dirname, "./favicon.png"),
+                    to: path.resolve(__dirname, "./dist")
                 },
             ]
         }),
@@ -70,12 +74,20 @@ module.exports = {
                 onEnd: {
                     copy: [
                         { 
-                            source: path.resolve(__dirname, 'dist/index.html'), 
-                            destination: path.resolve(__dirname, 'index.html') 
+                            source: path.resolve(__dirname, './dist/index.html'), 
+                            destination: path.resolve(__dirname, './index.html') 
                         },
                         { 
-                            source: path.resolve(__dirname, 'dist/index.css'), 
-                            destination: path.resolve(__dirname, 'index.css') 
+                            source: path.resolve(__dirname, './dist/index.css'), 
+                            destination: path.resolve(__dirname, './index.css') 
+                        },
+                        { 
+                            source: path.resolve(__dirname, './dist/videos'), 
+                            destination: path.resolve(__dirname, './videos') 
+                        },
+                        { 
+                            source: path.resolve(__dirname, './dist/images'), 
+                            destination: path.resolve(__dirname, './images') 
                         },
                     ],
                 },
@@ -85,7 +97,7 @@ module.exports = {
 
     devServer: {
         static: {
-            directory: path.join(__dirname, "dist"),
+            directory: path.join(__dirname, "./dist"),
         },
         open: true,
     },

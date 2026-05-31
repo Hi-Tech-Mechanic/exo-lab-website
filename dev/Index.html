@@ -141,17 +141,22 @@
             <div class="video-block reveal">
                 <div class="video-text">
                     <div class="meta"><span class="dot"></span>Сигнал 01</div>
-                    <h2>Мегаполис<br>ночи</h2>
-                    <p>Город будущего. Неоновые вывески освещают улицы, летающие машины рассекают воздух. Добро пожаловать в 2077.</p>
+                    <h2>Start<br>screen</h2>
+                    <p>Загрузочный экран с параллакс эффектом. Хаб с просмотром текущего персонажа</p>
                 </div>
                 <div class="video-wrapper">
-                    <canvas id="vidCanvas1"></canvas>
+                    <video autoplay muted playsinline controls width="100%" height="100%" preload="metadata">
+                        <source src="./videos/videoStartScreen.mp4" type="video/mp4" />
+                        Ваш браузер не поддерживает видео. Попробуйте скачать видео
+                        <a href="./videos/videoStartScreen.mp4">по этой ссылке</a>
+                        и открыть его на своём устройстве.
+                    </video>
                     <div class="video-overlay">
                         <div class="play-icon">
                             <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
                         </div>
                     </div>
-                    <span class="video-id">SIG.01 // 2077</span>
+                    <span class="video-id">SIG.01 // loading screen</span>
                 </div>
             </div>
 
@@ -159,17 +164,22 @@
             <div class="video-block reveal">
                 <div class="video-text">
                     <div class="meta"><span class="dot"></span>Сигнал 02</div>
-                    <h2>Космический<br>корабль</h2>
-                    <p>Голографические дисплеи, данные со скоростью света. Мостик корабля — центр управления галактикой.</p>
+                    <h2>Weapon<br>assembly</h2>
+                    <p>Сборка вооружения. Данная механика применяется ко многим вещам</p>
                 </div>
                 <div class="video-wrapper">
-                    <canvas id="vidCanvas2"></canvas>
+                    <video autoplay muted playsinline controls width="100%" height="100%" preload="metadata">
+                        <source src="./videos/WeaponAssembly.mp4" type="video/mp4" />
+                        Ваш браузер не поддерживает видео. Попробуйте скачать видео
+                        <a href="./videos/WeaponAssembly.mp4">по этой ссылке</a>
+                        и открыть его на своём устройстве.
+                    </video>
                     <div class="video-overlay">
                         <div class="play-icon">
                             <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
                         </div>
                     </div>
-                    <span class="video-id">SIG.02 // DEEP</span>
+                    <span class="video-id">SIG.02 // weapon assembly mode</span>
                 </div>
             </div>
 
@@ -177,17 +187,45 @@
             <div class="video-block reveal">
                 <div class="video-text">
                     <div class="meta"><span class="dot"></span>Сигнал 03</div>
-                    <h2>Иной<br>мир</h2>
-                    <p>Биолюминесцентные растения, двойные луны. Планета за пределами известного космоса.</p>
+                    <h2>Exoskeleton<br>assembly</h2>
+                    <p>Сборка экзоскелета. Возможность просматривать детали на нём и двигать конечности</p>
                 </div>
                 <div class="video-wrapper">
-                    <canvas id="vidCanvas3"></canvas>
+                    <video autoplay muted playsinline controls width="100%" height="100%" preload="metadata">
+                        <source src="./videos/ExoskeletonAssembly.mp4" type="video/mp4" />
+                        Ваш браузер не поддерживает видео. Попробуйте скачать видео
+                        <a href="./videos/ExoskeletonAssembly.mp4">по этой ссылке</a>
+                        и открыть его на своём устройстве.
+                    </video>
                     <div class="video-overlay">
                         <div class="play-icon">
                             <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
                         </div>
                     </div>
-                    <span class="video-id">SIG.03 // ALIEN</span>
+                    <span class="video-id">SIG.03 // exoskeleton assembly mode</span>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-block reveal">
+                <div class="video-text">
+                    <div class="meta"><span class="dot"></span>Сигнал 04</div>
+                    <h2>Wellbore<br>assembly</h2>
+                    <p>Сборка ствола скважины. Пример того, что приложение может использоваться и как обучающее</p>
+                </div>
+                <div class="video-wrapper">
+                    <video autoplay muted playsinline controls width="100%" height="100%" preload="metadata">
+                        <source src="./videos/WellboreAssembly.mp4" type="video/mp4" />
+                        Ваш браузер не поддерживает видео. Попробуйте скачать видео
+                        <a href="./videos/WellboreAssembly.mp4">по этой ссылке</a>
+                        и открыть его на своём устройстве.
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+                        </div>
+                    </div>
+                    <span class="video-id">SIG.04 // wellbore assembly mode</span>
                 </div>
             </div>
         </section>
@@ -197,7 +235,7 @@
             <div class="label-line">
                 <div class="line"></div>
                 <div class="corner"></div>
-                <h3>Архив изображений</h3>
+                <h3>Картотека</h3>
                 <div class="corner"></div>
                 <div class="line"></div>
             </div>
@@ -207,38 +245,56 @@
         <section class="photo-grid">
             <div class="photo-item reveal" data-parallax>
                 <div class="photo-inner">
-                    <img src="https://image.qwenlm.ai/public_source/c41cffb4-5b05-4767-a9a1-1c56857ddd16/19415a439-8d0b-4aa6-a4e0-3f9a86c66d80.png" alt="Neon District" loading="lazy">
+                    <img src="images/Exoskeleton.jpeg" alt="Neon District" loading="lazy">
                 </div>
                 <div class="photo-overlay">
-                    <h3>Neon District</h3>
-                    <p>Сердце мегаполиса будущего</p>
+                    <h3>Exoskeleton</h3>
+                    <p>Экзоскелет mk.1. Носит б\у бронепластины</p>
                 </div>
             </div>
             <div class="photo-item reveal" data-parallax>
                 <div class="photo-inner">
-                    <img src="https://image.qwenlm.ai/public_source/c41cffb4-5b05-4767-a9a1-1c56857ddd16/11f01667f-7021-4f0d-bafe-f8886e351570.png" alt="Spaceship Bridge" loading="lazy">
+                    <img src="images/ItemPickup.jpeg" alt="Spaceship Bridge" loading="lazy">
                 </div>
                 <div class="photo-overlay">
-                    <h3>Bridge Module</h3>
-                    <p>Центр управления полётом</p>
+                    <h3>Item pickup</h3>
+                    <p>Подбор предметов</p>
                 </div>
             </div>
             <div class="photo-item reveal" data-parallax>
                 <div class="photo-inner">
-                    <img src="https://image.qwenlm.ai/public_source/c41cffb4-5b05-4767-a9a1-1c56857ddd16/14604f292-4d28-4bda-b024-594a4987c1fa.png" alt="Alien World" loading="lazy">
+                    <img src="images/Inventory.jpeg" alt="Alien World" loading="lazy">
                 </div>
                 <div class="photo-overlay">
-                    <h3>Exo Planet</h3>
-                    <p>Биолюминесцентная экосистема</p>
+                    <h3>Inventory</h3>
+                    <p>Инвентарь. Реализованы вкладки по категориям, сортировка</p>
                 </div>
             </div>
             <div class="photo-item reveal" data-parallax>
                 <div class="photo-inner">
-                    <img src="https://image.qwenlm.ai/public_source/c41cffb4-5b05-4767-a9a1-1c56857ddd16/10efffcb3-a49d-47fb-8872-ca26e5c54236.png" alt="Robot Lab" loading="lazy">
+                    <img src="images/TargetItemInfo.jpeg" alt="Robot Lab" loading="lazy">
                 </div>
                 <div class="photo-overlay">
-                    <h3>Synth Lab</h3>
-                    <p>Лаборатория синтетических форм</p>
+                    <h3>Target item info</h3>
+                    <p>Просмотр каждой детали в режиме сборки</p>
+                </div>
+            </div>
+            <div class="photo-item reveal" data-parallax>
+                <div class="photo-inner">
+                    <img src="images/FloatingItemInfoWindow.jpeg" alt="Robot Lab" loading="lazy">
+                </div>
+                <div class="photo-overlay">
+                    <h3>Floating item info window</h3>
+                    <p>Характеристики предмета отдельным окном</p>
+                </div>
+            </div>
+            <div class="photo-item reveal" data-parallax>
+                <div class="photo-inner">
+                    <img src="images/ItemInfoWindow.jpeg" alt="Robot Lab" loading="lazy">
+                </div>
+                <div class="photo-overlay">
+                    <h3>Item info window</h3>
+                    <p>Характеристики предмета от наведения мышью</p>
                 </div>
             </div>
         </section>
@@ -344,4 +400,3 @@
     </footer>
 </body>
 </html>
-

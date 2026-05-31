@@ -141,17 +141,22 @@
             <div class="video-block reveal">
                 <div class="video-text">
                     <div class="meta"><span class="dot"></span>Сигнал 01</div>
-                    <h2>Мегаполис<br>ночи</h2>
-                    <p>Город будущего. Неоновые вывески освещают улицы, летающие машины рассекают воздух. Добро пожаловать в 2077.</p>
+                    <h2>Start<br>screen</h2>
+                    <p>Загрузочный экран с параллакс эффектом. Хаб с просмотром текущего персонажа</p>
                 </div>
                 <div class="video-wrapper">
-                    <canvas id="vidCanvas1"></canvas>
+                    <video autoplay muted playsinline controls width="100%" height="100%" preload="metadata">
+                        <source src="./videos/videoStartScreen.mp4" type="video/mp4" />
+                        Ваш браузер не поддерживает видео. Попробуйте скачать видео
+                        <a href="./videos/videoStartScreen.mp4">по этой ссылке</a>
+                        и открыть его на своём устройстве.
+                    </video>
                     <div class="video-overlay">
                         <div class="play-icon">
                             <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
                         </div>
                     </div>
-                    <span class="video-id">SIG.01 // 2077</span>
+                    <span class="video-id">SIG.01 // loading screen</span>
                 </div>
             </div>
 
@@ -159,17 +164,22 @@
             <div class="video-block reveal">
                 <div class="video-text">
                     <div class="meta"><span class="dot"></span>Сигнал 02</div>
-                    <h2>Космический<br>корабль</h2>
-                    <p>Голографические дисплеи, данные со скоростью света. Мостик корабля — центр управления галактикой.</p>
+                    <h2>Weapon<br>assembly</h2>
+                    <p>Сборка вооружения. Данная механика применяется ко многим вещам</p>
                 </div>
                 <div class="video-wrapper">
-                    <canvas id="vidCanvas2"></canvas>
+                    <video autoplay muted playsinline controls width="100%" height="100%" preload="metadata">
+                        <source src="./videos/WeaponAssembly.mp4" type="video/mp4" />
+                        Ваш браузер не поддерживает видео. Попробуйте скачать видео
+                        <a href="./videos/WeaponAssembly.mp4">по этой ссылке</a>
+                        и открыть его на своём устройстве.
+                    </video>
                     <div class="video-overlay">
                         <div class="play-icon">
                             <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
                         </div>
                     </div>
-                    <span class="video-id">SIG.02 // DEEP</span>
+                    <span class="video-id">SIG.02 // weapon assembly mode</span>
                 </div>
             </div>
 
@@ -177,17 +187,45 @@
             <div class="video-block reveal">
                 <div class="video-text">
                     <div class="meta"><span class="dot"></span>Сигнал 03</div>
-                    <h2>Иной<br>мир</h2>
-                    <p>Биолюминесцентные растения, двойные луны. Планета за пределами известного космоса.</p>
+                    <h2>Exoskeleton<br>assembly</h2>
+                    <p>Сборка экзоскелета. Возможность просматривать детали на нём и двигать конечности</p>
                 </div>
                 <div class="video-wrapper">
-                    <canvas id="vidCanvas3"></canvas>
+                    <video autoplay muted playsinline controls width="100%" height="100%" preload="metadata">
+                        <source src="./videos/ExoskeletonAssembly.mp4" type="video/mp4" />
+                        Ваш браузер не поддерживает видео. Попробуйте скачать видео
+                        <a href="./videos/ExoskeletonAssembly.mp4">по этой ссылке</a>
+                        и открыть его на своём устройстве.
+                    </video>
                     <div class="video-overlay">
                         <div class="play-icon">
                             <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
                         </div>
                     </div>
-                    <span class="video-id">SIG.03 // ALIEN</span>
+                    <span class="video-id">SIG.03 // exoskeleton assembly mode</span>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-block reveal">
+                <div class="video-text">
+                    <div class="meta"><span class="dot"></span>Сигнал 04</div>
+                    <h2>Wellbore<br>assembly</h2>
+                    <p>Сборка ствола скважины. Пример того, что приложение может использоваться и как обучающее</p>
+                </div>
+                <div class="video-wrapper">
+                    <video autoplay muted playsinline controls width="100%" height="100%" preload="metadata">
+                        <source src="./videos/WellboreAssembly.mp4" type="video/mp4" />
+                        Ваш браузер не поддерживает видео. Попробуйте скачать видео
+                        <a href="./videos/WellboreAssembly.mp4">по этой ссылке</a>
+                        и открыть его на своём устройстве.
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+                        </div>
+                    </div>
+                    <span class="video-id">SIG.04 // wellbore assembly mode</span>
                 </div>
             </div>
         </section>
@@ -197,7 +235,7 @@
             <div class="label-line">
                 <div class="line"></div>
                 <div class="corner"></div>
-                <h3>Архив изображений</h3>
+                <h3>Картотека</h3>
                 <div class="corner"></div>
                 <div class="line"></div>
             </div>
@@ -207,38 +245,56 @@
         <section class="photo-grid">
             <div class="photo-item reveal" data-parallax>
                 <div class="photo-inner">
-                    <img src="https://image.qwenlm.ai/public_source/c41cffb4-5b05-4767-a9a1-1c56857ddd16/19415a439-8d0b-4aa6-a4e0-3f9a86c66d80.png" alt="Neon District" loading="lazy">
+                    <img src="images/Exoskeleton.jpeg" alt="Neon District" loading="lazy">
                 </div>
                 <div class="photo-overlay">
-                    <h3>Neon District</h3>
-                    <p>Сердце мегаполиса будущего</p>
+                    <h3>Exoskeleton</h3>
+                    <p>Экзоскелет mk.1. Носит б\у бронепластины</p>
                 </div>
             </div>
             <div class="photo-item reveal" data-parallax>
                 <div class="photo-inner">
-                    <img src="https://image.qwenlm.ai/public_source/c41cffb4-5b05-4767-a9a1-1c56857ddd16/11f01667f-7021-4f0d-bafe-f8886e351570.png" alt="Spaceship Bridge" loading="lazy">
+                    <img src="images/ItemPickup.jpeg" alt="Spaceship Bridge" loading="lazy">
                 </div>
                 <div class="photo-overlay">
-                    <h3>Bridge Module</h3>
-                    <p>Центр управления полётом</p>
+                    <h3>Item pickup</h3>
+                    <p>Подбор предметов</p>
                 </div>
             </div>
             <div class="photo-item reveal" data-parallax>
                 <div class="photo-inner">
-                    <img src="https://image.qwenlm.ai/public_source/c41cffb4-5b05-4767-a9a1-1c56857ddd16/14604f292-4d28-4bda-b024-594a4987c1fa.png" alt="Alien World" loading="lazy">
+                    <img src="images/Inventory.jpeg" alt="Alien World" loading="lazy">
                 </div>
                 <div class="photo-overlay">
-                    <h3>Exo Planet</h3>
-                    <p>Биолюминесцентная экосистема</p>
+                    <h3>Inventory</h3>
+                    <p>Инвентарь. Реализованы вкладки по категориям, сортировка</p>
                 </div>
             </div>
             <div class="photo-item reveal" data-parallax>
                 <div class="photo-inner">
-                    <img src="https://image.qwenlm.ai/public_source/c41cffb4-5b05-4767-a9a1-1c56857ddd16/10efffcb3-a49d-47fb-8872-ca26e5c54236.png" alt="Robot Lab" loading="lazy">
+                    <img src="images/TargetItemInfo.jpeg" alt="Robot Lab" loading="lazy">
                 </div>
                 <div class="photo-overlay">
-                    <h3>Synth Lab</h3>
-                    <p>Лаборатория синтетических форм</p>
+                    <h3>Target item info</h3>
+                    <p>Просмотр каждой детали в режиме сборки</p>
+                </div>
+            </div>
+            <div class="photo-item reveal" data-parallax>
+                <div class="photo-inner">
+                    <img src="images/FloatingItemInfoWindow.jpeg" alt="Robot Lab" loading="lazy">
+                </div>
+                <div class="photo-overlay">
+                    <h3>Floating item info window</h3>
+                    <p>Характеристики предмета отдельным окном</p>
+                </div>
+            </div>
+            <div class="photo-item reveal" data-parallax>
+                <div class="photo-inner">
+                    <img src="images/ItemInfoWindow.jpeg" alt="Robot Lab" loading="lazy">
+                </div>
+                <div class="photo-overlay">
+                    <h3>Item info window</h3>
+                    <p>Характеристики предмета от наведения мышью</p>
                 </div>
             </div>
         </section>
@@ -344,4 +400,3 @@
     </footer>
 <script defer>(()=>{var e={334:()=>{window.animateHero=function(){anime({targets:".hero .reveal",translateY:[40,0],opacity:[0,1],duration:1e3,easing:"easeOutExpo",delay:anime.stagger(200)}),anime({targets:".hero-logo polygon",strokeDashoffset:[anime.setDashoffset,0],easing:"easeInOutSine",duration:1500,delay:anime.stagger(200,{start:500}),direction:"alternate",loop:!1})}},526:()=>{window.addEventListener("scroll",(()=>{const e=window.scrollY;gridScrollY=.3*e;const t=document.getElementById("header");e>50?t.classList.add("scrolled"):t.classList.remove("scrolled")}))},828:()=>{document.querySelectorAll(".project-card").forEach((e=>{e.addEventListener("mousemove",(t=>{const n=e.getBoundingClientRect(),a=t.clientX-n.left,i=t.clientY-n.top,o=n.width/2,r=(i-n.height/2)/20,s=(o-a)/20;e.style.transform=`translateY(-8px) perspective(1000px) rotateX(${r}deg) rotateY(${s}deg)`})),e.addEventListener("mouseleave",(()=>{e.style.transform="translateY(0) perspective(1000px) rotateX(0) rotateY(0)"}))}))},166:()=>{document.querySelectorAll(".cta-btn, .submit-btn").forEach((e=>{e.addEventListener("click",(function(e){const t=this.getBoundingClientRect(),n=document.createElement("span");n.className="ripple",n.style.left=e.clientX-t.left+"px",n.style.top=e.clientY-t.top+"px",this.appendChild(n),setTimeout((()=>n.remove()),600)}))}))},765:()=>{const e=new IntersectionObserver((e=>{e.forEach((e=>{if(e.isIntersecting){e.target.classList.add("active"),anime({targets:e.target,translateY:[40,0],opacity:[0,1],duration:800,easing:"easeOutExpo"});const t=e.target.querySelector(".tech-item-fill");if(t){const e=t.getAttribute("data-width");setTimeout((()=>{t.style.width=e+"%"}),300)}}}))}),{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal").forEach((t=>{e.observe(t)}))},539:()=>{document.querySelectorAll(".tech-item").forEach((e=>{e.addEventListener("mouseenter",(()=>{const t=e.querySelector(".tech-item-icon");anime({targets:t,scale:[1,1.15],duration:300,easing:"easeOutElastic(1, .5)"})})),e.addEventListener("mouseleave",(()=>{const t=e.querySelector(".tech-item-icon");anime({targets:t,scale:1,duration:300,easing:"easeOutQuad"})}))}))},893:()=>{const e=document.getElementById("loadingBarFill"),t=document.getElementById("loadingScreen");let n=0;const a=setInterval((()=>{n+=15*Math.random()+5,n>=100&&(n=100,clearInterval(a),setTimeout((()=>{anime({targets:t,opacity:0,duration:800,easing:"easeInOutQuad",complete:()=>{t.style.display="none",animateHero()}})}),300)),e.style.width=n+"%"}),150)},419:()=>{const e=document.getElementById("customCursor");let t=0,n=0,a=0,i=0;const o=[];let r=performance.now();for(let e=0;e<5;e++){const t=document.createElement("div");t.className="cursor-trail",t.style.opacity=.3-.05*e,t.style.width=8-e+"px",t.style.height=8-e+"px",t.style.pointerEvents="none",document.body.appendChild(t),o.push({el:t,x:0,y:0})}function s(e,t,n,a){const i=n*(60*a);return e+(t-e)*Math.min(i,1)}document.addEventListener("mousemove",(e=>{t=e.clientX,n=e.clientY}),{passive:!0}),document.querySelectorAll('a, button, .project-card, .tech-item, .social-link, .cta-btn, .submit-btn, [data-cursor="hover"]').forEach((t=>{t.addEventListener("mouseenter",(()=>e.classList.add("hovering")),{passive:!0}),t.addEventListener("mouseleave",(()=>e.classList.remove("hovering")),{passive:!0})})),a=t,i=n,o.forEach((e=>{e.x=t,e.y=n})),requestAnimationFrame((function l(c){const d=c||performance.now();let h=(d-r)/1e3;r=d,h>.25&&(h=.25),a=s(a,t,.4,h),i=s(i,n,.4,h),e.style.left=a+"px",e.style.top=i+"px";let u=a,m=i;for(let e=0;e<o.length;e++){const t=o[e],n=.3-.04*e;t.x=s(t.x,u,n,h),t.y=s(t.y,m,n,h),t.el.style.left=t.x+"px",t.el.style.top=t.y+"px",u=t.x,m=t.y}requestAnimationFrame(l)}))},482:()=>{const e=document.getElementById("gridCanvas"),t=e.getContext("2d");let n=.15,a=1;function i(){e.width=window.innerWidth,e.height=window.innerHeight}i(),window.addEventListener("resize",i),function i(){t.clearRect(0,0,e.width,e.height),t.strokeStyle=`rgba(216, 219, 0, ${n})`,t.lineWidth=.5;for(let n=0;n<e.width;n+=200)t.beginPath(),t.moveTo(n,0),t.lineTo(n,e.height),t.stroke();for(let n=-200;n<e.height+200;n+=200)t.beginPath(),t.moveTo(0,n),t.lineTo(e.width,n),t.stroke();n+=.001*a,n>=.25&&(a=-1),n<=.1&&(a=1),requestAnimationFrame(i)}()},924:()=>{const e=document.getElementById("noiseCanvas"),t=e.getContext("2d");let n=0,a=0;function i(){e.width=window.innerWidth/2,e.height=window.innerHeight/2}i(),window.addEventListener("resize",i);let o=0;!function i(){n+=.3,a+=.5,e.style.transform=`translate(${n%10}px, ${a%10}px)`,o++,o%3==0&&function(){const n=e.width,a=e.height,i=t.createImageData(n,a),o=i.data;for(let e=0;e<o.length;e+=4){const t=255*Math.random();o[e]=t,o[e+1]=t,o[e+2]=t,o[e+3]=255}t.putImageData(i,0,0)}(),requestAnimationFrame(i)}()},819:()=>{const e=document.querySelectorAll("section[id]"),t=document.querySelectorAll(".nav a");window.addEventListener("scroll",(()=>{let n="";e.forEach((e=>{const t=e.offsetTop;window.scrollY>=t-200&&(n=e.getAttribute("id"))})),t.forEach((e=>{e.style.color="",e.style.textShadow="",e.getAttribute("href")==="#"+n&&(e.style.color="var(--accent)",e.style.textShadow="0 0 10px var(--neon-50)")}))}))},683:()=>{const e=document.getElementById("mobileMenuBtn"),t=document.getElementById("mainNav");e.addEventListener("click",(()=>{t.classList.toggle("open")})),t.querySelectorAll("a").forEach((e=>{e.addEventListener("click",(()=>{t.classList.remove("open")}))}))},868:()=>{document.querySelectorAll('a[href^="#"]').forEach((e=>{e.addEventListener("click",(function(e){e.preventDefault();const t=this.getAttribute("href"),n=document.querySelector(t);n&&n.scrollIntoView({behavior:"smooth",block:"start"})}))}))}},t={};function n(a){var i=t[a];if(void 0!==i)return i.exports;var o=t[a]={exports:{}};return e[a](o,o.exports,n),o.exports}(()=>{"use strict";function e(e,t){var n=document.getElementById(e);if(n){var a;switch(t){case 0:default:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),i=1e3*Math.random();function o(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return o(),window.addEventListener("resize",o),{draw:function e(){i+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var o=0;o<30;o++){var r=(.5*Math.sin(.3*i+.7*o)+.5)*t;a.beginPath(),a.moveTo(r,0),a.lineTo(r,n),a.strokeStyle="rgba(0,240,255,"+(.02+.01*Math.sin(i+o))+")",a.lineWidth=1,a.stroke()}var s=80*i%n;a.beginPath(),a.moveTo(0,s),a.lineTo(t,s),a.strokeStyle="rgba(0,240,255,0.15)",a.lineWidth=2,a.stroke();for(var l=0;l<15;l++){var c=(.5*Math.sin(.5*i+1.2*l)+.5)*t,d=(.5*Math.cos(.3*i+.9*l)+.5)*n,h=2+1*Math.sin(i+l);a.beginPath(),a.arc(c,d,h,0,2*Math.PI),a.fillStyle="rgba(0,240,255,"+(.3+.2*Math.sin(2*i+l))+")",a.fill()}requestAnimationFrame(e)},resize:o}}(n);break;case 1:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),i=1e3*Math.random();function o(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return o(),window.addEventListener("resize",o),{draw:function e(){i+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var o=.5*t,r=.5*n,s=.35*Math.min(t,n),l=0;l<4;l++){var c=s*(l+1)/4;a.beginPath(),a.arc(o,r,c,0,2*Math.PI),a.strokeStyle="rgba(0,240,255,"+(.08-.01*l)+")",a.lineWidth=1,a.stroke()}var d=.8*i;a.beginPath(),a.moveTo(o,r),a.lineTo(o+Math.cos(d)*s,r+Math.sin(d)*s),a.strokeStyle="rgba(0,240,255,0.2)",a.lineWidth=1.5,a.stroke(),a.beginPath(),a.moveTo(o,r),a.arc(o,r,s,d-.8,d),a.closePath();var h=a.createRadialGradient(o,r,0,o,r,s);h.addColorStop(0,"rgba(0,240,255,0.06)"),h.addColorStop(1,"rgba(0,240,255,0)"),a.fillStyle=h,a.fill();for(var u=0;u<8;u++){var m=o+Math.cos(.15*i+1.5*u)*(.6*s+20*Math.sin(u)),g=r+Math.sin(.2*i+1.3*u)*(.6*s+15*Math.cos(u));a.beginPath(),a.arc(m,g,2,0,2*Math.PI),a.fillStyle="rgba(180,0,255,"+(.4+.2*Math.sin(i+u))+")",a.fill()}requestAnimationFrame(e)},resize:o}}(n);break;case 2:a=function(e){if(!e)return null;var t,n,a=e.getContext("2d"),i=1e3*Math.random();function o(){var a=e.parentElement.getBoundingClientRect();t=e.width=a.width,n=e.height=a.height}return o(),window.addEventListener("resize",o),{draw:function e(){i+=.016,a.clearRect(0,0,t,n),a.fillStyle="#08080e",a.fillRect(0,0,t,n);for(var o=0;o<20;o++){a.beginPath();for(var r=o/20*n,s=0;s<=t;s+=3){var l=r+Math.sin(.01*s+.5*i+.8*o)*(15+2*o);0===s?a.moveTo(s,l):a.lineTo(s,l)}a.strokeStyle="rgba(180,0,255,"+(.03+.005*o)+")",a.lineWidth=1,a.stroke()}for(var c=0;c<12;c++){var d=(.5*Math.sin(.2*i+.9*c)+.5)*t,h=(.5*Math.cos(.15*i+1.1*c)+.5)*n,u=3+2*Math.sin(i+2*c),m=a.createRadialGradient(d,h,0,d,h,4*u);m.addColorStop(0,"rgba(0,240,255,"+(.5+.2*Math.sin(i+c))+")"),m.addColorStop(1,"rgba(0,240,255,0)"),a.beginPath(),a.arc(d,h,4*u,0,2*Math.PI),a.fillStyle=m,a.fill()}requestAnimationFrame(e)},resize:o}}(n)}a&&(new IntersectionObserver((function(e){e.forEach((function(e){e.isIntersecting&&a.draw()}))}),{threshold:.1}).observe(n),a.draw())}}function t(){e("vidCanvas1",0),e("vidCanvas2",1),e("vidCanvas3",2)}n(819),n(683),n(868),n(419),n(482),n(924),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",t):t();const a=document.getElementById("particlesCanvas"),i=a.getContext("2d",{alpha:!0,desynchronized:!0});let o=[];const r=1e3/60;let s=0,l=0,c=0;class d{constructor(e,t){this.reset(e,t),this.vx=.3*(Math.random()-.5),this.vy=.3*(Math.random()-.5),this.radius=2*Math.random()+1,this.alpha=.5*Math.random()+.2,this._color="216,219,0"}reset(e,t){this.x=Math.random()*e,this.y=Math.random()*t}update(e,t){this.x+=this.vx,this.y+=this.vy,this.x<0?this.x=e:this.x>e&&(this.x=0),this.y<0?this.y=t:this.y>t&&(this.y=0)}draw(e){e.beginPath(),e.arc(this.x,this.y,this.radius,0,2*Math.PI),e.fillStyle=`rgba(${this._color},${this.alpha})`,e.fill()}}function h(){l=a.width=window.innerWidth,c=a.height=window.innerHeight,function(){o=[];for(let e=0;e<80;e++)o.push(new d(l,c))}()}h(),window.addEventListener("resize",h,{passive:!0}),requestAnimationFrame((function e(t){if(t-s<r)requestAnimationFrame(e);else{s=t,i.clearRect(0,0,l,c);for(let e=0;e<o.length;e++){const t=o[e];t.update(l,c),t.draw(i)}i.lineWidth=.5;for(let e=0;e<o.length;e++){const t=o[e];for(let n=e+1;n<o.length;n++){const e=o[n],a=t.x-e.x,r=t.y-e.y,s=a*a+r*r;if(s<9e4){const n=.15*(1-s/9e4);i.beginPath(),i.moveTo(t.x,t.y),i.lineTo(e.x,e.y),i.strokeStyle=`rgba(${t._color},${n})`,i.stroke()}}}requestAnimationFrame(e)}})),n(334),n(526),n(828),n(166),n(765),n(539),n(893)})()})();</script></body>
 </html>
-
