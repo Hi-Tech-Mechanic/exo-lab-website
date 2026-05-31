@@ -16,6 +16,7 @@ import "../styles/components/header.css";
 import "../styles/components/loadingScreen.css";
 import "../styles/components/titlesSection.css";
 import "../styles/components/blueprintAnnotations.css";
+import "../styles/components/lightBox.css";
 
 import "../styles/sections/aboutSection.css";
 import "../styles/sections/contactSection.css";
@@ -51,5 +52,6 @@ import "./animations/exoskeletonScrollLayerControl.js";
 import "./animations/helmetAnimation.js";
 
 import "./core/loadingScreen.js";
+import "./core/openImages.js";
 
 import "./utils/generateProjectImages.js";

@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@4.5/index.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fontsource/roboto@4.5/index.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5/index.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/share-tech-mono@5.0.0/index.css" rel="stylesheet">
     <link href="index.css?v=1" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
 </head>
@@ -674,54 +675,54 @@
 
         <!-- PHOTO GRID -->
         <section class="photo-grid">
-            <div class="photo-item reveal" data-parallax>
+            <div class="photo-item reveal" data-parallax data-lightbox="Exoskeleton — Экзоскелет mk.1">
                 <div class="photo-inner">
-                    <img src="images/Exoskeleton.jpeg" alt="Neon District" loading="lazy">
+                    <img src="images/Exoskeleton.jpeg" alt="Exoskeleton" loading="lazy">
                 </div>
                 <div class="photo-overlay">
                     <h3>Exoskeleton</h3>
                     <p>Экзоскелет mk.1. Носит б\у бронепластины</p>
                 </div>
             </div>
-            <div class="photo-item reveal" data-parallax>
+            <div class="photo-item reveal" data-parallax data-lightbox="Item Pickup — Подбор предметов">
                 <div class="photo-inner">
-                    <img src="images/ItemPickup.jpeg" alt="Spaceship Bridge" loading="lazy">
+                    <img src="images/ItemPickup.jpeg" alt="Item pickup" loading="lazy">
                 </div>
                 <div class="photo-overlay">
                     <h3>Item pickup</h3>
                     <p>Подбор предметов</p>
                 </div>
             </div>
-            <div class="photo-item reveal" data-parallax>
+            <div class="photo-item reveal" data-parallax data-lightbox="Inventory — Инвентарь">
                 <div class="photo-inner">
-                    <img src="images/Inventory.jpeg" alt="Alien World" loading="lazy">
+                    <img src="images/Inventory.jpeg" alt="Inventory" loading="lazy">
                 </div>
                 <div class="photo-overlay">
                     <h3>Inventory</h3>
                     <p>Инвентарь. Реализованы вкладки по категориям, сортировка</p>
                 </div>
             </div>
-            <div class="photo-item reveal" data-parallax>
+            <div class="photo-item reveal" data-parallax data-lightbox="Target Item Info — Просмотр деталей">
                 <div class="photo-inner">
-                    <img src="images/TargetItemInfo.jpeg" alt="Robot Lab" loading="lazy">
+                    <img src="images/TargetItemInfo.jpeg" alt="Target item info" loading="lazy">
                 </div>
                 <div class="photo-overlay">
                     <h3>Target item info</h3>
                     <p>Просмотр каждой детали в режиме сборки</p>
                 </div>
             </div>
-            <div class="photo-item reveal" data-parallax>
+            <div class="photo-item reveal" data-parallax data-lightbox="Floating Item Info Window — Характеристики предмета">
                 <div class="photo-inner">
-                    <img src="images/FloatingItemInfoWindow.jpeg" alt="Robot Lab" loading="lazy">
+                    <img src="images/FloatingItemInfoWindow.jpeg" alt="Floating item info window" loading="lazy">
                 </div>
                 <div class="photo-overlay">
                     <h3>Floating item info window</h3>
                     <p>Характеристики предмета отдельным окном</p>
                 </div>
             </div>
-            <div class="photo-item reveal" data-parallax>
+            <div class="photo-item reveal" data-parallax data-lightbox="Item Info Window — Характеристики при наведении">
                 <div class="photo-inner">
-                    <img src="images/ItemInfoWindow.jpeg" alt="Robot Lab" loading="lazy">
+                    <img src="images/ItemInfoWindow.jpeg" alt="Item info window" loading="lazy">
                 </div>
                 <div class="photo-overlay">
                     <h3>Item info window</h3>
@@ -823,6 +824,24 @@
             </a>
         </div>
     </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+    <div class="lightbox-backdrop"></div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24">
+        <line x1="4" y1="4" x2="20" y2="20"/>
+        <line x1="20" y1="4" x2="4" y2="20"/>
+        </svg>
+    </button>
+    <div class="lightbox-content">
+        <img class="lightbox-image" id="lightboxImage" src="" alt="">
+        <div class="lightbox-info">
+        <div class="info-tag" id="lightboxTag"></div>
+        <div class="info-title" id="lightboxTitle"></div>
+        </div>
+    </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

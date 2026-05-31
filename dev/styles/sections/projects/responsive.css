@@ -1,5 +1,3 @@
-/* ===== PROJECTS SECTION RESPONSIVE ===== */
-
 /* Tablet (max-width: 900px) */
 @media (max-width: 900px) {
     /* Video Blocks - Stack vertically */
@@ -51,8 +49,21 @@
     }
 
     .photo-item .photo-overlay {
+        background: linear-gradient(to top, rgba(5,5,8,0.9) 0%, transparent 50%);
+        transition: opacity 0.5s ease;
+    }
+
+    .photo-item:hover .photo-overlay {
         opacity: 1;
-        background: linear-gradient(to top, rgba(5,5,8,0.8) 0%, transparent 40%);
+    }
+
+    .photo-item .photo-overlay h3 {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        color: var(--cyan);
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
     }
 
     .photo-item::before,
