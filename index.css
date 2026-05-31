@@ -281,7 +281,7 @@ body::before {
     border: 2px solid var(--accent);
     border-radius: 50%;
     pointer-events: none;
-    z-index: 10000;
+    z-index: 200000;
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s, border-color 0.2s;
     mix-blend-mode: difference;
@@ -297,7 +297,7 @@ body::before {
     border: 1px solid #d8db00;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 199999;
     opacity: 0.4;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
@@ -1226,8 +1226,6 @@ body::before {
 .photo-item:hover::after {
     opacity: 0.6;
 }
-/* ===== PROJECTS SECTION RESPONSIVE ===== */
-
 /* Tablet (max-width: 900px) */
 @media (max-width: 900px) {
     /* Video Blocks - Stack vertically */
@@ -1278,12 +1276,6 @@ body::before {
         filter: grayscale(0%) brightness(0.85) contrast(1.05);
     }
 
-    /* .photo-item .photo-overlay {
-        opacity: 1;
-        background: linear-gradient(to top, rgba(5,5,8,0.8) 0%, transparent 40%);
-    } */
-
-    /* Enhanced photo grid */
     .photo-item .photo-overlay {
         background: linear-gradient(to top, rgba(5,5,8,0.9) 0%, transparent 50%);
         transition: opacity 0.5s ease;
