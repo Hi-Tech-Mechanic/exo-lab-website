@@ -1,4 +1,4 @@
-import "../styles/index.css";
+import "../styles/root.css";
 import "../styles/adaptation/mobileMenu.css";
 import "../styles/adaptation/responsive.css";
 
@@ -32,26 +32,26 @@ import "../styles/sections/technologiesSection.css";
 import "../styles/sections/exoskeletonSection.css";
 import "../styles/sections/layerInfo.css";
 
-import "./navigation/activeNavLinkOnScroll.js";
-import "./navigation/mobileMenu.js";
-import "./navigation/smoothScrollForNavLinks.js";
+import "../js/navigation/activeNavLinkOnScroll.js";
+import "../js/navigation/mobileMenu.js";
+import "../js/navigation/smoothScrollForNavLinks.js";
 
-import "./effects/customCursor.js";
-import "./effects/gridBackground.js";
-import "./effects/noiseOverlay.js";
-import "./effects/videoAnimations/videoAnimationController.js";
-import "./effects/particleConstellation.js";
+import "../js/effects/customCursor.js";
+import "../js/effects/gridBackground.js";
+import "../js/effects/noiseOverlay.js";
+import "../js/effects/videoAnimations/videoAnimationController.js";
+import "../js/effects/particleConstellation.js";
 
-import "./animations/heroAnimations.js";
-import "./animations/parallaxOnScroll.js";
-import "./animations/projectCardTiltEffect.js";
-import "./animations/rippleEffectOnButtons.js";
-import "./animations/scrollReveal.js";
-import "./animations/techIconAnimationOnHover.js";
-import "./animations/exoskeletonScrollLayerControl.js";
-import "./animations/helmetAnimation.js";
+import "../js/animations/heroAnimations.js";
+import "../js/animations/parallaxOnScroll.js";
+import "../js/animations/projectCardTiltEffect.js";
+import "../js/animations/rippleEffectOnButtons.js";
+import "../js/animations/scrollReveal.js";
+import "../js/animations/techIconAnimationOnHover.js";
+import "../js/animations/exoskeletonScrollLayerControl.js";
+import "../js/animations/helmetAnimation.js";
 
-import "./core/loadingScreen.js";
-import "./core/openImages.js";
+import "../js/core/loadingScreen.js";
+import "../js/core/openImages.js";
 
-import "./utils/generateProjectImages.js";
+import "../js/utils/generateProjectImages.js";
