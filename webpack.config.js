@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
 
@@ -15,6 +14,7 @@ module.exports = {
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, "./dist"),
+        clean: true,
     },
 
     module: {
@@ -25,7 +25,7 @@ module.exports = {
             },
             {
                 test: /\.(mp4|mpeg|webm)$/,
-                type: './dev/videos', // Используем современный Asset Modules вместо устаревшего file-loader
+                type: './dev/videos',
                 generator: {
                     filename: 'videos/[name][ext]'
                 }
@@ -34,17 +34,13 @@ module.exports = {
     },
 
     plugins: [
-        new CleanWebpackPlugin(),
-        
         new HtmlWebpackPlugin({
             template: "./dev/index.html",
             filename: './index.html',
-            // Включаем 'body', чтобы Webpack сам управлял тегами скриптов
             inject: 'body',
             minify: false,
         }),
 
-        // Этот плагин находит скомпилированный critical.bundle.js и встраивает его в HTML текстом
         new HtmlInlineScriptPlugin({
             scriptMatch: [/.bundle\.js$/],
         }),
@@ -68,7 +64,6 @@ module.exports = {
             ]
         }),
 
-        // Обновляем в корне проекта bundle-файлы
         new FileManagerPlugin({
             events: {
                 onEnd: {
@@ -103,5 +98,4 @@ module.exports = {
     },
 
     mode: "production",
-    // mode: "development"
 }
