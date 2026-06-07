@@ -2,13 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './dev/js/index.js',
+        index: './js/index.js',
     },
     
     output: {
@@ -25,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.(mp4|mpeg|webm)$/,
-                type: './dev/videos',
+                type: 'asset/resource',
                 generator: {
                     filename: 'videos/[name][ext]'
                 }
@@ -35,7 +34,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./dev/index.html",
+            template: "./index.html",
             filename: './index.html',
             inject: 'body',
             minify: false,
@@ -45,16 +44,18 @@ module.exports = {
             scriptMatch: [/.bundle\.js$/],
         }),
 
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'index.css',
+        }),
         
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, "./dev/images"),
+                    from: path.resolve(__dirname, "./images"),
                     to: path.resolve(__dirname, "./dist/images")
                 },
                 {
-                    from: path.resolve(__dirname, "./dev/videos"),
+                    from: path.resolve(__dirname, "./videos"),
                     to: path.resolve(__dirname, "./dist/videos")
                 },
                 {
@@ -63,31 +64,6 @@ module.exports = {
                 },
             ]
         }),
-
-        new FileManagerPlugin({
-            events: {
-                onEnd: {
-                    copy: [
-                        { 
-                            source: path.resolve(__dirname, './dist/index.html'), 
-                            destination: path.resolve(__dirname, './index.html') 
-                        },
-                        { 
-                            source: path.resolve(__dirname, './dist/index.css'), 
-                            destination: path.resolve(__dirname, './index.css') 
-                        },
-                        { 
-                            source: path.resolve(__dirname, './dist/videos'), 
-                            destination: path.resolve(__dirname, './videos') 
-                        },
-                        { 
-                            source: path.resolve(__dirname, './dist/images'), 
-                            destination: path.resolve(__dirname, './images') 
-                        },
-                    ],
-                },
-            },
-        })
     ],
 
     devServer: {
