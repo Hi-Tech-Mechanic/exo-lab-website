@@ -72,7 +72,7 @@ function updateCursor(timestamp) {
 }
 
 // === Hover-эффекты ===
-const interactiveSelectors = 'a, button, .project-card, .tech-item, .social-link, .cta-btn, .submit-btn, [data-cursor="hover"]';
+const interactiveSelectors = 'a, button, .project-card, .tech-item, .photo-item, .social-link, .cta-btn, .submit-btn, [data-cursor="hover"]';
 document.querySelectorAll(interactiveSelectors).forEach(el => {
     el.addEventListener('mouseenter', () => customCursor.classList.add('hovering'), { passive: true });
     el.addEventListener('mouseleave', () => customCursor.classList.remove('hovering'), { passive: true });
