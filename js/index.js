@@ -7,7 +7,6 @@ import "../styles/animations/rippleEffect.css";
 import "../styles/animations/scrollHint.css";
 
 import "../styles/base/background.css";
-import "../styles/base/glowText.css";
 import "../styles/base/overlay.css";
 import "../styles/base/scroll.css";
 
