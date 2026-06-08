@@ -26,13 +26,13 @@
         right: -100%;
         width: 70%;
         height: 100vh;
-        background: rgba(10, 10, 10, 0.95);
+        background: var(--overlay-dark-95);
         backdrop-filter: blur(15px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: right 0.4s;
-        border-left: 1px solid rgba(0, 255, 136, 0.1);
+        border-left: 1px solid var(--green-border);
     }
 
     .nav.open {

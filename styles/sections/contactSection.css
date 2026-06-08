@@ -21,13 +21,15 @@
 .form-group textarea {
     width: 100%;
     padding: 15px 20px;
-    background: rgba(20, 20, 25, 0.6);
+    background: var(--card-bg-60);
     border: 1px solid var(--neon-15);
     border-radius: 6px;
     color: var(--text-primary);
     font-family: var(--font-body);
     font-size: 0.95rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
     outline: none;
 }
 

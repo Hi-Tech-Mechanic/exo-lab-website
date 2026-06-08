@@ -1,42 +1,59 @@
 :root {
     --bg-primary: #0a0a0a;
-    --bg-secondary: #001122;
     --accent: #d8e700;
-    --accent-light: #ff8c33;
     --accent-orange: #ff6b00;
-    --accent-yellow: #ffcc00;
     --accent-glow: rgba(255, 107, 0, 0.4);
-    --text-primary: #ffffff;
+    --text-primary: #fff;
     --text-secondary: #e0e0e0;
-    --text-muted: #888888;
+    --text-muted: #888;
+    --text-light: #e0e0e8;
     --graphite: #2a2a2a;
-    --graphite-light: #3a3a3a;
     --card-bg: rgba(20, 20, 25, 0.7);
-    --neon-color: 216, 219, 0;
-    --neon-5: rgba(var(--neon-color), 0.05);
-    --neon-10: rgba(var(--neon-color), 0.1);
-    --neon-15: rgba(var(--neon-color), 0.15);
-    --neon-20: rgba(var(--neon-color), 0.2);
-    --neon-30: rgba(var(--neon-color), 0.3);
-    --neon-40: rgba(var(--neon-color), 0.4);
-    --neon-50: rgba(var(--neon-color), 0.5);
+    --card-bg-60: rgba(20, 20, 25, 0.6);
+    --neon-rgb: 216, 219, 0;
+    --neon-5: rgba(var(--neon-rgb), 0.05);
+    --neon-10: rgba(var(--neon-rgb), 0.1);
+    --neon-15: rgba(var(--neon-rgb), 0.15);
+    --neon-20: rgba(var(--neon-rgb), 0.2);
+    --neon-30: rgba(var(--neon-rgb), 0.3);
+    --neon-40: rgba(var(--neon-rgb), 0.4);
+    --neon-50: rgba(var(--neon-rgb), 0.5);
     --blueprint-line: rgba(255, 107, 0, 0.3);
-    --blueprint-grid: rgba(255, 107, 0, 0.08);
     --blueprint-accent: rgba(255, 140, 51, 0.5);
     --cyan: #00f0ff;
-    --cyan-dim: rgba(0, 240, 255, 0.15);
-    --purple: #b400ff;
-    --purple-dim: rgba(180, 0, 255, 0.15);
-    --bg-dark: #050508;
-    --bg-card-dark: #0a0a10;
     --text-dim: #555568;
     --border: rgba(0, 240, 255, 0.1);
-    --grid-opacity: 0.15;
-    --font-heading: 'Rajdhani', sans-serif;
-    --font-body: 'Roboto', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-    --font-ui: 'Inter', sans-serif;
+    --green-glow: rgba(0, 255, 136, 0.5);
+    --green-border: rgba(0, 255, 136, 0.1);
+    --green-ripple: rgba(0, 255, 136, 0.3);
+    --overlay-dark-85: rgba(10, 10, 10, 0.85);
+    --overlay-dark-90: rgba(10, 10, 10, 0.9);
+    --overlay-dark-95: rgba(10, 10, 10, 0.95);
+
+    /* Cyan opacity variants (for scanlines, borders, shadows) */
+    --cyan-01: rgba(0, 240, 255, 0.01);
+    --cyan-015: rgba(0, 240, 255, 0.015);
+    --cyan-02: rgba(0, 240, 255, 0.02);
+    --cyan-05: rgba(0, 240, 255, 0.05);
+    --cyan-20: rgba(0, 240, 255, 0.2);
+    --cyan-25: rgba(0, 240, 255, 0.25);
+    --cyan-30: rgba(0, 240, 255, 0.3);
+    --cyan-50: rgba(0, 240, 255, 0.5);
+    --cyan-60: rgba(0, 240, 255, 0.6);
+
+    /* White opacity variants */
+    --white-70: rgba(255, 255, 255, 0.7);
+
+    /* Black shadow variants */
+    --shadow-black-30: rgba(0, 0, 0, 0.3);
+    --shadow-black-50: rgba(0, 0, 0, 0.5);
+
+    --font-heading: "Rajdhani", sans-serif;
+    --font-body: "Roboto", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --font-ui: "Inter", sans-serif;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -57,16 +74,28 @@ body {
 
 /* Grid background overlay */
 body::before {
-    content: '';
+    content: "";
     position: fixed;
     inset: 0;
-    background:
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,240,255,0.015) 2px, rgba(0,240,255,0.015) 4px);
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        var(--cyan-015) 2px,
+        var(--cyan-015) 4px
+    );
     pointer-events: none;
     z-index: 9999;
 }
 
 /* Scrollbar styling */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 3px; }
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--cyan);
+    border-radius: 3px;
+}

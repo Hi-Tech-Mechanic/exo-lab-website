@@ -8,13 +8,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.4s, backdrop-filter 0.4s;
+    transition:
+        background 0.4s,
+        backdrop-filter 0.4s;
 }
 
 .header.scrolled {
-    background: rgba(10, 10, 10, 0.85);
+    background: var(--overlay-dark-85);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+    border-bottom: 1px solid var(--green-border);
 }
 
 .logo {
@@ -40,12 +42,14 @@
     font-size: 0.9rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition:
+        color 0.3s,
+        text-shadow 0.3s;
     position: relative;
 }
 
 .nav a::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -4px;
     left: 0;
@@ -57,7 +61,7 @@
 
 .nav a:hover {
     color: var(--accent);
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    text-shadow: 0 0 10px var(--green-glow);
 }
 
 .nav a:hover::after {

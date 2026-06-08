@@ -11,13 +11,15 @@
     border: 1px solid var(--neon-10);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.4s, box-shadow 0.4s;
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
     position: relative;
     cursor: none;
 }
 
 .project-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +32,9 @@
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 30px var(--neon-15), 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 0 30px var(--neon-15),
+        0 10px 40px var(--shadow-black-50);
 }
 
 .project-card:hover::before {

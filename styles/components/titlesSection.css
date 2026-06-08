@@ -10,7 +10,7 @@
 }
 
 .section-title::after {
-    content: '';
+    content: "";
     display: block;
     width: 60px;
     height: 2px;

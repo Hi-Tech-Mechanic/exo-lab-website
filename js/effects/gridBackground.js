@@ -1,3 +1,5 @@
+import Colors from '../utils/colors.js';
+
 const gridCanvas = document.getElementById('gridCanvas');
 const gridCtx = gridCanvas.getContext('2d');
 let gridScrollY = 0;
@@ -12,7 +14,7 @@ function resizeGridCanvas() {
 
 function drawGrid() {
     gridCtx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
-    gridCtx.strokeStyle = `rgba(216, 219, 0, ${gridOpacity})`;
+    gridCtx.strokeStyle = Colors.neon(gridOpacity);
     gridCtx.lineWidth = 0.5;
 
     const offsetY = (gridScrollY % spacing);

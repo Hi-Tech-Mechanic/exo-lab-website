@@ -39,7 +39,6 @@ import "../js/navigation/smoothScrollForNavLinks.js";
 import "../js/effects/customCursor.js";
 import "../js/effects/gridBackground.js";
 import "../js/effects/noiseOverlay.js";
-import "../js/effects/videoAnimations/videoAnimationController.js";
 import "../js/effects/particleConstellation.js";
 
 import "../js/animations/heroAnimations.js";
