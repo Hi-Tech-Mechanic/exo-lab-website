@@ -31,12 +31,81 @@
         text-align: center;
     }
 
+    /* Mobile: restore native cursor and hide custom cursor/trail */
     body {
         cursor: auto;
     }
 
     .custom-cursor,
     .cursor-trail {
-        display: none;
+        display: none !important;
+    }
+
+    /* Hide heavy canvases on small devices to save battery and CPU */
+    .grid-bg,
+    .noise-overlay,
+    .particles-canvas,
+    #gridCanvas,
+    #noiseCanvas,
+    #particlesCanvas {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+    /* Larger hit targets for touch */
+    .cta-btn,
+    .submit-btn,
+    .nav a,
+    .project-card,
+    .tech-item {
+        min-height: 48px;
+        padding: 14px 18px;
+        touch-action: manipulation;
+    }
+
+    /* Make photo grid single column on smaller screens */
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .photo-item {
+        height: 40vh;
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Photo Grid - 1 column */
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-item {
+        height: 40vh;
+        min-height: 250px;
+    }
+
+    /* Video adjustments */
+    .video-wrapper {
+        height: 35vh;
+    }
+
+    .video-text {
+        padding: 1.5rem;
+    }
+
+    .video-text h2 {
+        font-size: 1.3rem;
+    }
+
+    .video-text p {
+        font-size: 0.8rem;
+    }
+
+    /* Section labels */
+    .section-label {
+        padding: 3rem 0 2rem;
     }
 }

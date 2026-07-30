@@ -31,6 +31,12 @@ import "../styles/sections/technologiesSection.css";
 import "../styles/sections/exoskeletonSection.css";
 import "../styles/sections/layerInfo.css";
 
+/*
+  Adaptation utility MUST be imported before heavy visual effect modules
+  so they can read the touch-device flag.
+*/
+import "../js/utils/mobileAdaptation.js";
+
 import "../js/navigation/activeNavLinkOnScroll.js";
 import "../js/navigation/mobileMenu.js";
 import "../js/navigation/smoothScrollForNavLinks.js";
